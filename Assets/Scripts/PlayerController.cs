@@ -53,4 +53,11 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(transform.position + movement * speed * Time.deltaTime);
 
     }
+
+    public void SetOverworldVisuals(Animator animator, SpriteRenderer spriteRenderer, Vector3 scale)
+    {
+        anim = animator;
+        playerSprite = spriteRenderer;
+        transform.localScale = scale;
+    }
 }
