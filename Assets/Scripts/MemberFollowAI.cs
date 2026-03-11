@@ -6,7 +6,10 @@ public class MemberFollowAI : MonoBehaviour
 {
     [SerializeField] private Transform followTarget;
     [SerializeField] private int speed;
-    [SerializeField] private float minDistance = 1.5f;
+    [SerializeField] private float minDistance = 1f;
+    [SerializeField] private float startDistance = 1.3f; // Distance to start walking
+    [SerializeField] private float stopDistance = 1f;  // Distance to stop and go idle
+    private bool isCurrentlyWalking = false;    
 
     private Animator anim;
     private SpriteRenderer spriteRenderer;
@@ -29,29 +32,42 @@ public class MemberFollowAI : MonoBehaviour
     {
         if (followTarget == null) return;
 
-        if (Vector3.Distance(transform.position, followTarget.position) > minDistance)
-        {
-            // walk towards the player
-            if (anim != null) anim.SetBool(IS_WALK_PARAM, true);
-            
-            // Calculate direction for 4-way animation
-            Vector3 direction = (followTarget.position - transform.position).normalized;
-            if (anim != null)
-            {
-                anim.SetFloat("moveX", direction.x);
-                anim.SetFloat("moveY", direction.z);
-            }
+        float currentDist = Vector3.Distance(transform.position, followTarget.position);
 
+        // 1. Logic to decide if we SHOULD be walking
+        if (currentDist > startDistance)
+        {
+            isCurrentlyWalking = true;
+        }
+        else if (currentDist <= stopDistance)
+        {
+            isCurrentlyWalking = false;
+        }
+
+        // 2. Execution of movement and animation
+        if (isCurrentlyWalking)
+        {
             float step = speed * Time.deltaTime;
+            Vector3 lastPos = transform.position;
             transform.position = Vector3.MoveTowards(transform.position, followTarget.position, step);
+
+            Vector3 realDirection = (transform.position - lastPos).normalized;
+
+            if (realDirection != Vector3.zero)
+            {
+                anim.SetBool(IS_WALK_PARAM, true);
+                // Manual damping for smooth turns
+                float smoothedX = Mathf.MoveTowards(anim.GetFloat("moveX"), realDirection.x, 5f * Time.deltaTime);
+                float smoothedY = Mathf.MoveTowards(anim.GetFloat("moveY"), realDirection.z, 5f * Time.deltaTime);
+                anim.SetFloat("moveX", smoothedX);
+                anim.SetFloat("moveY", smoothedY);
+            }
         }
         else
         {
-            // stop walking/return to idle
-            if (anim != null) anim.SetBool(IS_WALK_PARAM, false);
+            anim.SetBool(IS_WALK_PARAM, false);
         }
     }
-
     public void SetFollowDistance(float followDistance)
     {
         minDistance = followDistance;

@@ -206,3 +206,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followTarget: {fileID: 0}
   speed: 3
+  minDistance: 1.5

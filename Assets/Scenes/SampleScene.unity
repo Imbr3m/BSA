@@ -7748,7 +7748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followTarget: {fileID: 0}
   speed: 3
-  minDistance: 1.5
+  minDistance: 1
 --- !u!4 &1688941184 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6301451359513238038, guid: 395bb382624324948bc5790064cd9dd1,
