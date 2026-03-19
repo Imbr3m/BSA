@@ -46,6 +46,14 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool(IS_WALK_PARAM, movement != Vector3.zero);
         
+
+        // freeze the player when dialogue
+        if (DialogueManager.Instance != null && DialogueManager.Instance.PlayingDialogue)
+        {
+            anim.SetBool(IS_WALK_PARAM, false); // Go to idle animation
+            movement = Vector3.zero; // Stop physics movement
+            return; 
+        }
     }
 
     private void FixedUpdate()
