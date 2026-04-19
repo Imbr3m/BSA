@@ -56,6 +56,8 @@ public class MemberFollowAI : MonoBehaviour
             if (realDirection != Vector3.zero)
             {
                 anim.SetBool(IS_WALK_PARAM, true);
+
+                Debug.Log("Soldier AI: Attempting to walk! Setting isWalk to TRUE.");
                 // Manual damping for smooth turns
                 float smoothedX = Mathf.MoveTowards(anim.GetFloat("moveX"), realDirection.x, 5f * Time.deltaTime);
                 float smoothedY = Mathf.MoveTowards(anim.GetFloat("moveY"), realDirection.z, 5f * Time.deltaTime);
@@ -65,6 +67,7 @@ public class MemberFollowAI : MonoBehaviour
         }
         else
         {
+            Debug.Log("Soldier AI: Reached target distance. Setting isWalk to FALSE.");
             anim.SetBool(IS_WALK_PARAM, false);
         }
     }

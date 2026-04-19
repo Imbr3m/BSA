@@ -119,8 +119,10 @@ public class CharacterManager : MonoBehaviour
             else // any other will be a follower
             {
                 Vector3 positionToSpawn = transform.position;// get the followers spawn position
-                float spacing = 2.0f; // Define a constant spacing value
+
+                float spacing = 2.0f; 
                 positionToSpawn.x -= i * spacing;
+
 
                 if (currentParty[i].MemberOverworldVisualPrefab == null)
                 {
