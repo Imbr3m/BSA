@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.24151504, g: 0.42540464, b: 0.5018809, a: 1}
+  m_IndirectSpecularColor: {r: 0.24154864, g: 0.42543942, b: 0.5019181, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10349,6 +10349,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d75dca898e06c8544acb29922af19df0, type: 3}
+--- !u!1001 &1812744403
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4491443250769876325, guid: 7cf79e0e80af30e47bda8a0be236412f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 42.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491443250769876325, guid: 7cf79e0e80af30e47bda8a0be236412f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0936043
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491443250769876325, guid: 7cf79e0e80af30e47bda8a0be236412f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491443250769876325, guid: 7cf79e0e80af30e47bda8a0be236412f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491443250769876325, guid: 7cf79e0e80af30e47bda8a0be236412f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491443250769876325, guid: 7cf79e0e80af30e47bda8a0be236412f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491443250769876325, guid: 7cf79e0e80af30e47bda8a0be236412f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491443250769876325, guid: 7cf79e0e80af30e47bda8a0be236412f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491443250769876325, guid: 7cf79e0e80af30e47bda8a0be236412f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491443250769876325, guid: 7cf79e0e80af30e47bda8a0be236412f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137604067210744323, guid: 7cf79e0e80af30e47bda8a0be236412f,
+        type: 3}
+      propertyPath: m_Name
+      value: Crates (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7cf79e0e80af30e47bda8a0be236412f, type: 3}
 --- !u!1001 &1816277890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11581,6 +11649,7 @@ SceneRoots:
   - {fileID: 347498922}
   - {fileID: 714721582}
   - {fileID: 1161887984}
+  - {fileID: 1812744403}
   - {fileID: 1268685548}
   - {fileID: 3998901131029076718}
   - {fileID: 1119536850}
