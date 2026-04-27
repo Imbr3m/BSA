@@ -30,6 +30,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private SpriteRenderer playerSprite;
 
+    [Header("Sound Effects")]
+    [SerializeField] private AudioClip[] damageSoundClip;
+
+
+
     [Header("Stealth")]
     public bool isHidden = false;
 
@@ -138,11 +143,16 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(transform.position + movement * currentSpeed * Time.deltaTime);
     }
 
-    // New function to handle damage
+    // function to handle damage
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        // damage sfx
+        // SoundFXManager.instance.PlaySoundFXClip(damageSoundClip, transform, 1f);
+        SoundFXManager.instance.PlayRandomSoundFXClip(damageSoundClip, transform, 0.2f);
+       
         
         if (currentHealth <= 0)
         {
