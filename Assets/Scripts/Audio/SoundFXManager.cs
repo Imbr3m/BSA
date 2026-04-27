@@ -7,6 +7,7 @@ public class SoundFXManager : MonoBehaviour
     public static SoundFXManager instance;
 
     [SerializeField] private AudioSource soundFXObject;
+    [SerializeField] private AudioSource uiAudioSource;
 
     void Awake()
     {
@@ -14,6 +15,14 @@ public class SoundFXManager : MonoBehaviour
         {
             instance = this;
         }
+
+        if (uiAudioSource == null) uiAudioSource = GetComponent<AudioSource>();
+    }
+
+    public void PlayUIBeep(AudioClip clip, float volume)
+    {
+        if (clip == null) return;
+        uiAudioSource.PlayOneShot(clip, volume);
     }
 
     public void PlaySoundFXClip(AudioClip audioClip, Transform spawnTransform, float volume)

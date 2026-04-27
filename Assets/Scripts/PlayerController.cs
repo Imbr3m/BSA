@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     
     private const string IS_WALK_PARAM = "isWalk";
     private const string IS_CROUCH_PARAM = "isCrouch"; 
+    private const string IS_RUN_PARAM = "isRun";
 
     [Header("Portrait Settings")]
     [SerializeField] private Animator portraitAnim;
@@ -139,6 +140,7 @@ public class PlayerController : MonoBehaviour
         }
         anim.SetBool(IS_WALK_PARAM, isMoving);
         anim.SetBool(IS_CROUCH_PARAM, isCrouching); 
+        anim.SetBool(IS_RUN_PARAM, currentSpeed == runSpeed && isMoving);
 
         // portrait logic
         if (portraitAnim != null)

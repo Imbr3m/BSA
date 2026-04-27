@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -9,110 +10,123 @@ public class DialogueManager : MonoBehaviour
     [System.Serializable]
     public class DialogueSegment
     {
-        public string SubjectText;
+        public string Name;
+        public Sprite CharacterPortrait; 
+        public AudioClip VoiceSound;     
         [TextArea] public string DialogueToPrint;
-        [Range(1f, 25f)] public float LettersPerSecond = 15f;
+        public float LettersPerSecond = 20f;
     }
 
     [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private TMP_Text SubjectText;
-    [SerializeField] private TMP_Text BodyText;
+    [SerializeField] private TMP_Text nameText;
+    [SerializeField] private TMP_Text bodyText;
+    [SerializeField] private Image portraitHolder; 
 
     private DialogueSegment[] currentSegments;
-    private int DialogueIndex;
+    private int dialogueIndex;
     public bool PlayingDialogue { get; private set; }
-    private bool Skip;
+    private bool skip;
     private bool isTyping;
 
     void Awake()
     {
         if (Instance == null) Instance = this;
-        
-        // Ensure everything is blank and hidden on startup
-        BodyText.text = string.Empty;
-        SubjectText.text = string.Empty;
+
+        // FIX 1: Removed dialoguePanel.SetActive(false); 
+        // The box will now stay visible when the game starts.
     }
 
     void Update()
     {
         if (!PlayingDialogue) return;
 
-        // Listen for E or Left Click
         if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
         {
-            if (isTyping)
-            {
-                Skip = true; // Instantly fill text
-            }
-            else
-            {
-                PlayNextSegment(); // Move to next line
-            }
+            if (isTyping) skip = true;
+            else PlayNextSegment();
         }
     }
 
     public void StartDialogue(DialogueSegment[] segments)
     {
-        // Start a routine to delay the UI by one frame.
-        // This stops the 'E' key press that triggered the chat 
-        // from instantly skipping the first line!
-        StartCoroutine(DelayStart(segments));
-    }
-
-    private IEnumerator DelayStart(DialogueSegment[] segments)
-    {
-        yield return null; // Wait exactly one frame
-
         currentSegments = segments;
-        DialogueIndex = 0;
+        dialogueIndex = 0;
         PlayingDialogue = true;
-        dialoguePanel.SetActive(true);
+        
+        // Ensure it's active just in case it was hidden manually
+        if (dialoguePanel != null) dialoguePanel.SetActive(true); 
+        
         PlayNextSegment();
     }
 
     private void PlayNextSegment()
     {
-        if (DialogueIndex < currentSegments.Length)
+        if (dialogueIndex < currentSegments.Length)
         {
-            StartCoroutine(PlayDialogue(currentSegments[DialogueIndex]));
+            StartCoroutine(PlayDialogue(currentSegments[dialogueIndex]));
         }
         else
         {
-            // 1. Dialogue is officially over, tell the Player script they can move again
             PlayingDialogue = false;
             
-            // 2. Wipe the text completely clean!
-            BodyText.text = "";
-            SubjectText.text = "";
-            
-            // 3. (Optional) If you want the yellow box to disappear, uncomment the next line. 
-            // But since you want the blank box to stay on the UI, we leave this deleted/commented out!
-            // dialoguePanel.SetActive(false); 
+            // clears the dialogue after finish
+            bodyText.text = ""; 
+            nameText.text = "";
+
+            if (portraitHolder != null) 
+            {
+                portraitHolder.gameObject.SetActive(false);
+            }
         }
     }
 
     private IEnumerator PlayDialogue(DialogueSegment segment)
     {
         isTyping = true;
-        Skip = false;
-        BodyText.text = string.Empty;
-        SubjectText.text = segment.SubjectText;
+        skip = false;
+        
+        // FIX 2: Removed the Undertale asterisk
+        bodyText.text = ""; 
+        
+        nameText.text = segment.Name; 
+
+        // FIX 3: Portrait Safety Check
+        // If CharacterPortrait is empty in the Inspector, it simply hides the Image 
+        // component so you don't see a white square. It won't crash your game!
+        if (portraitHolder != null)
+        {
+            if (segment.CharacterPortrait != null)
+            {
+                portraitHolder.gameObject.SetActive(true);
+                portraitHolder.sprite = segment.CharacterPortrait;
+            }
+            else
+            {
+                portraitHolder.gameObject.SetActive(false); 
+            }
+        }
 
         float delay = 1f / segment.LettersPerSecond;
         
         for (int i = 0; i < segment.DialogueToPrint.Length; i++)
         {
-            if (Skip)
+            if (skip)
             {
-                BodyText.text = segment.DialogueToPrint;
+                bodyText.text = segment.DialogueToPrint;
                 break; 
             }
 
-            BodyText.text += segment.DialogueToPrint[i];
+            bodyText.text += segment.DialogueToPrint[i];
+
+            if (segment.VoiceSound != null && SoundFXManager.instance != null)
+            {
+                SoundFXManager.instance.PlayUIBeep(segment.VoiceSound, 0.1f);
+            }
+
             yield return new WaitForSeconds(delay);
         }
 
         isTyping = false;
-        DialogueIndex++;
+        dialogueIndex++;
     }
 }
