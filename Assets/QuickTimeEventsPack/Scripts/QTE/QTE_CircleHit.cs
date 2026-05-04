@@ -7,6 +7,11 @@ namespace QTEPack
 {
     public class QTE_CircleHit : QuickTimeEvent
     {
+        [Header("DBD Style Settings")]
+        [Tooltip("How many consecutive hits are needed to pass the QTE?")]
+        [SerializeField] private int requiredHitsToWin = 3; 
+
+        [Header("Original Settings")]
         [SerializeField] private float[] HitAreaScaleByDifficulty;
         [SerializeField] private float[] CursorSpeedByDifficulty;
         [SerializeField] private Image hitAreaImage;
@@ -19,23 +24,44 @@ namespace QTEPack
         private float maxCursorRotToWin;
         private QTEHitResult done;
 
+        // NEW: Variables to track our DBD mechanics
+        private int currentDifficulty;
+        private int currentSuccessfulHits;
+        private float moveDirection; 
+
         public override void ShowQTE(Vector2 position, float scale, int difficulty)
         {
             base.ShowQTE(position, scale, difficulty);
 
-            hitAreaImage.fillAmount = HitAreaScaleByDifficulty[difficulty];
-            hitAreaRotationZ = Random.Range(0, 360);
-            hitAreaImage.rectTransform.rotation = Quaternion.Euler(0, 0, hitAreaRotationZ);
+            // Save difficulty to generate new hit areas later
+            currentDifficulty = difficulty;
+            
+            // Reset our hit tracker and set direction to clockwise (1f)
+            currentSuccessfulHits = 0;
+            moveDirection = 1f; 
 
-            hitAreaImage.color = ColorByDifficulty[difficulty];
-
-            var allowedErrorByDifficulty = -350f * HitAreaScaleByDifficulty[difficulty] + 7.5f;
-            minCursorRotToWin = hitAreaRotationZ + allowedErrorByDifficulty;
-            maxCursorRotToWin = hitAreaRotationZ + 10;
+            // Generate the very first hit area
+            GenerateNewHitArea();
 
             done = QTEHitResult.Playing;
             resultText.text = "";
             StartCoroutine(RunQTE(difficulty));
+        }
+
+        // NEW: A helper function that moves the target safely without ending the game
+        private void GenerateNewHitArea()
+        {
+            hitAreaImage.fillAmount = HitAreaScaleByDifficulty[currentDifficulty];
+            
+            // Randomize the new location on the circle
+            hitAreaRotationZ = Random.Range(0, 360);
+            hitAreaImage.rectTransform.rotation = Quaternion.Euler(0, 0, hitAreaRotationZ);
+
+            hitAreaImage.color = ColorByDifficulty[currentDifficulty];
+
+            var allowedErrorByDifficulty = -350f * HitAreaScaleByDifficulty[currentDifficulty] + 7.5f;
+            minCursorRotToWin = hitAreaRotationZ + allowedErrorByDifficulty;
+            maxCursorRotToWin = hitAreaRotationZ + 10;
         }
 
         public IEnumerator RunQTE(int difficulty)
@@ -45,7 +71,8 @@ namespace QTEPack
 
             while (done == QTEHitResult.Playing)
             {
-                cursorRotationZ -= FixedSpeed(speed);
+                // NEW: We multiply the speed by our moveDirection so it can spin backwards!
+                cursorRotationZ -= FixedSpeed(speed) * moveDirection;
 
                 cursor.rotation = Quaternion.Euler(0, 0, cursorRotationZ);
 
@@ -68,7 +95,8 @@ namespace QTEPack
         {
             if (done == QTEHitResult.Playing)
             {
-                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButton(0))
+                // FIXED: Changed to GetMouseButtonDown so holding the button doesn't cheat the system
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) 
                 {
                     var normalizedCursorZ = cursorRotationZ % 360;
 
@@ -77,10 +105,26 @@ namespace QTEPack
 
                     if (checkA || checkB)
                     {
-                        done = QTEHitResult.Win;
+                        // They hit the sweet spot! 
+                        currentSuccessfulHits++;
+                        
+                        if (currentSuccessfulHits >= requiredHitsToWin)
+                        {
+                            // If they reached the required amount of hits, they win.
+                            done = QTEHitResult.Win;
+                        }
+                        else
+                        {
+                            // REVERSE AND RELOCATE!
+                            moveDirection *= -1f; // Flips between 1 and -1
+                            GenerateNewHitArea();
+                        }
                     }
                     else
+                    {
+                        // They missed! Instant fail.
                         done = QTEHitResult.Fail;
+                    }
                 }
             }
         }
