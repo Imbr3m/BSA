@@ -40,7 +40,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Stealth")]
     public bool isHidden = false;
-
+    public bool isCrouching { get; private set; } 
+    
+    
     private PlayerControls playerControls;
     private Rigidbody rb;
     private Vector3 movement;
@@ -105,7 +107,7 @@ public class PlayerController : MonoBehaviour
         float z = playerControls.Player.Move.ReadValue<Vector2>().y;
 
         // crouch
-        bool isCrouching = playerControls.Player.Crouch.IsPressed();
+        isCrouching = playerControls.Player.Crouch.IsPressed();
         // run
         bool isRunning = playerControls.Player.Run.IsPressed(); 
         movement = new Vector3(x, 0, z).normalized;

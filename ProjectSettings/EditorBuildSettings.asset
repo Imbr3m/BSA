@@ -21,10 +21,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene Maiko.unity
     guid: bc2b5fc9b73bd5248a67805145110540
   - enabled: 1
-    path: Assets/Scenes/s1_living_room.unity
+    path: Assets/Scenes/Scene 3/s1_living_room_destroyed.unity
     guid: 80473918d5c7c69418045cc8f0840870
   - enabled: 1
-    path: Assets/Scenes/s1_bed_room.unity
+    path: Assets/Scenes/Scene 3/s1_bed_room_destroyed.unity
     guid: 9e775645c4227d8488a41a417284c72c
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
