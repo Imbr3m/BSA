@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/MainMenu/LockInc.unity
+    guid: 45155567d1f799e418ba0e083881f5be
+  - enabled: 1
+    path: Assets/Scenes/MainMenu/MainMenu.unity
     guid: d9cec1b749ca82d48b946922bd8dedc0
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
@@ -14,5 +17,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Military camp.unity
     guid: 8557086788b5a764f937ea713f4d7bff
+  - enabled: 1
+    path: Assets/Scenes/Scene Maiko.unity
+    guid: bc2b5fc9b73bd5248a67805145110540
+  - enabled: 1
+    path: Assets/Scenes/s1_living_room.unity
+    guid: 80473918d5c7c69418045cc8f0840870
+  - enabled: 1
+    path: Assets/Scenes/s1_bed_room.unity
+    guid: 9e775645c4227d8488a41a417284c72c
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

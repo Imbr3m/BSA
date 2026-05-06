@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb0b4dfe717498a4fa24caeaea373556
+guid: 94b8f92d4a903014597174f0d071fc10
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,8 +69,8 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 1
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -95,13 +95,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soldier1-Idle_0
+      name: LogoLockInc-Intro_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
-        height: 50
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -109,20 +109,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19c7b4219e060ba4faf2a6917e94284e
-      internalID: 844296680
+      spriteID: c93a6ea4d1e813b46b2effe6689efb4b
+      internalID: -1518090359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier1-Idle_1
+      name: LogoLockInc-Intro_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 100
         y: 0
-        width: 40
-        height: 50
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,83 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 150a0cec43c0e2c4bb1f9b6ee4cb81b6
-      internalID: -1322103912
+      spriteID: 74dc828e00eb2374d95a161b16eee3ad
+      internalID: 1672407867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier1-Idle_2
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 40
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3613355b21ad8be43922c17b01209e51
-      internalID: 1021031562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soldier1-Idle_3
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
-        width: 40
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7378b8d03c37bb944bb2d58925ebd64e
-      internalID: 478070526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soldier1-Idle_4
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 40
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bb13cd02e9404e4995af45462991bc4
-      internalID: 1944832329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soldier1-Idle_5
+      name: LogoLockInc-Intro_2
       rect:
         serializedVersion: 2
         x: 200
         y: 0
-        width: 40
-        height: 50
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2dea03746bc4f74e8efad0b404281d0
-      internalID: -975212641
+      spriteID: 0f4fe9d39560aec4fbd641cecb7df93e
+      internalID: 404370142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier1-Idle_6
+      name: LogoLockInc-Intro_3
       rect:
         serializedVersion: 2
-        x: 240
+        x: 300
         y: 0
-        width: 40
-        height: 50
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a028f578339740c409dfca12cf6d9028
-      internalID: 737547381
+      spriteID: f39e76f4cb07d8b458c855f53f49f4a3
+      internalID: -1521492739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier1-Idle_7
+      name: LogoLockInc-Intro_4
       rect:
         serializedVersion: 2
-        x: 280
+        x: 400
         y: 0
-        width: 40
-        height: 50
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,8 +193,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c73bc962c1137814eb1fb2f345cff1ac
-      internalID: 1575866498
+      spriteID: c6e8eb13bf963df4b8206bdf9cb53f2c
+      internalID: -1771497895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoLockInc-Intro_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8269ecd49f24ea84592dfca2ab42f0eb
+      internalID: -1403750478
       vertices: []
       indices: 
       edges: []
@@ -265,7 +223,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a4c0f3f1e39ed6b46bda32997cfcdd56
+    spriteID: 9d41eaa24b4858e4fb3a4eb075d0ac94
     internalID: 0
     vertices: []
     indices: 
@@ -273,14 +231,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Soldier1-Idle_0: 844296680
-      Soldier1-Idle_1: -1322103912
-      Soldier1-Idle_2: 1021031562
-      Soldier1-Idle_3: 478070526
-      Soldier1-Idle_4: 1944832329
-      Soldier1-Idle_5: -975212641
-      Soldier1-Idle_6: 737547381
-      Soldier1-Idle_7: 1575866498
+      LogoLockInc-Intro_0: -1518090359
+      LogoLockInc-Intro_1: 1672407867
+      LogoLockInc-Intro_2: 404370142
+      LogoLockInc-Intro_3: -1521492739
+      LogoLockInc-Intro_4: -1771497895
+      LogoLockInc-Intro_5: -1403750478
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
