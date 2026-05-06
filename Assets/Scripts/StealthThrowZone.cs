@@ -25,22 +25,59 @@ public class StealthThrowZone : MonoBehaviour
         {
             inZone = false;
             if (visualIndicator != null) visualIndicator.SetActive(false);
+
+            if (!qteTriggered)
+            {
+                qteManager.HideQTEPanel();
+            }
         }
     }
 
     void Update()
     {
-        // If they are in the zone, are crouching, and press Left Click
-        if (inZone && !qteTriggered && player.isCrouching && Input.GetMouseButtonDown(0))
+        if (inZone && !qteTriggered)
         {
-            qteTriggered = true; 
-            if (visualIndicator != null) visualIndicator.SetActive(false);
-            
-            // Freeze the player so they can't walk away during the throw!
-            player.enabled = false; 
+            if (player.isCrouching)
+            {
+                if (!qteManager.qtePanel.activeSelf)
+                {
+                    qteManager.ShowQTEPanel();
+                }
 
-            // Start the bar minigame
-            qteManager.StartQTE();
+                if (Input.GetMouseButtonDown(0))
+                {
+                    qteTriggered = true; 
+                    if (visualIndicator != null) visualIndicator.SetActive(false);
+                    
+                    player.isAiming = true; // Freeze her!
+                    qteManager.StartQTE();  // Start the minigame!
+                }
+            }
+            else 
+            {
+                if (qteManager.qtePanel.activeSelf)
+                {
+                    qteManager.HideQTEPanel();
+                }
+            }
+        }
+    }
+
+    public void OnThrowSuccess()
+    {
+        Debug.Log("EVENT FIRED: (Success)");
+        player.isAiming = false; 
+    }
+
+    public void OnThrowFail()
+    {
+        Debug.Log("EVENT FIRED: (Fail)");
+        player.isAiming = false; 
+        qteTriggered = false; 
+        
+        if (inZone && visualIndicator != null) 
+        {
+            visualIndicator.SetActive(true);
         }
     }
 }

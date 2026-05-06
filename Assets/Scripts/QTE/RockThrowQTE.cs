@@ -22,12 +22,23 @@ public class RockThrowQTE : MonoBehaviour
 
     private bool isPlaying = false;
     private float currentFill = 0f;
+    private float fillDirection = 1f; 
 
-    public void StartQTE()
+    public void ShowQTEPanel()
     {
         qtePanel.SetActive(true);
         currentFill = 0f;
         fillBar.fillAmount = 0f;
+    }
+
+    public void HideQTEPanel()
+    {
+        qtePanel.SetActive(false);
+    }
+
+    public void StartQTE()
+    {
+        fillDirection = 1f; 
         isPlaying = true;
     }
 
@@ -35,20 +46,24 @@ public class RockThrowQTE : MonoBehaviour
     {
         if (!isPlaying) return;
 
-       
         if (Input.GetMouseButton(0))
         {
-            currentFill += fillSpeed * Time.deltaTime;
-            fillBar.fillAmount = currentFill;
+            currentFill += fillSpeed * fillDirection * Time.deltaTime;
 
-            // If they hold it too long and it hits the very top
             if (currentFill >= 1f)
             {
-                EvaluateThrow();
+                currentFill = 1f; 
+                fillDirection = -1f;
             }
+            else if (currentFill <= 0f)
+            {
+                currentFill = 0f; 
+                fillDirection = 1f;
+            }
+
+            fillBar.fillAmount = currentFill;
         }
-        //releasing Left Click
-        else if (Input.GetMouseButtonUp(0) && currentFill > 0)
+        else if (Input.GetMouseButtonUp(0)) 
         {
             EvaluateThrow();
         }
@@ -57,18 +72,18 @@ public class RockThrowQTE : MonoBehaviour
     private void EvaluateThrow()
     {
         isPlaying = false;
-        qtePanel.SetActive(false);
 
-        // release the mouse inside the sweet spot?
         if (currentFill >= winZoneMin && currentFill <= winZoneMax)
         {
             Debug.Log("Rock Thrown Successfully!");
-            OnSuccess.Invoke();
+            OnSuccess.Invoke(); 
         }
         else
         {
             Debug.Log("Fumbled the rock!");
-            OnFail.Invoke();
+            OnFail.Invoke(); 
         }
+
+        qtePanel.SetActive(false);
     }
 }

@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     [Header("Stealth")]
     public bool isHidden = false;
     public bool isCrouching { get; private set; } 
+    public bool isAiming = false;
     
     
     private PlayerControls playerControls;
@@ -100,6 +101,14 @@ public class PlayerController : MonoBehaviour
             anim.SetBool(IS_WALK_PARAM, false); 
             anim.SetBool(IS_CROUCH_PARAM, false); 
             movement = Vector3.zero; 
+            return; 
+        }
+
+        if (isAiming)
+        {
+            movement = Vector3.zero; 
+            anim.SetBool(IS_WALK_PARAM, false);
+            anim.SetBool(IS_RUN_PARAM, false);
             return; 
         }
 
