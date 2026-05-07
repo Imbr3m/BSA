@@ -12,16 +12,12 @@ public class AutoDialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // 1. Check if the object entering the box is the Player
         if (other.CompareTag("Player"))
         {
-            // 2. Stop here if it's already been triggered and we only want it to play once
             if (playOnlyOnce && hasTriggered) return;
 
-            // 3. Mark it as triggered so it doesn't spam
             hasTriggered = true;
             
-            // 4. Instantly start the dialogue without waiting for 'E'
             DialogueManager.Instance.StartDialogue(myLines);
         }
     }

@@ -2,38 +2,31 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    [Header("Dialogue Settings")]
     public DialogueManager.DialogueSegment[] myLines; 
+    
+    // NEW: This creates a beautiful dropdown in your Unity Inspector!
+    [Tooltip("Which icon should float over Sampaguita's head?")]
+    public PlayerContextClue.ClueType bubbleType = PlayerContextClue.ClueType.Exclamation;
+
     private bool playerInRange;
-
-    // 1. Add a slot for your "E" Canvas
-    [SerializeField] private GameObject interactPrompt; 
-
-    void Start()
-    {
-        // Ensure the prompt is hidden the moment the game starts
-        if (interactPrompt != null)
-        {
-            interactPrompt.SetActive(false);
-        }
-    }
 
     void Update()
     {
         if (playerInRange)
         {
-            // If dialogue is playing, hide the 'E' (we don't want it floating while they talk!)
             if (DialogueManager.Instance.PlayingDialogue)
             {
-                if (interactPrompt != null) interactPrompt.SetActive(false);
+                PlayerContextClue.Instance.HideClue();
             }
-            // If dialogue is NOT playing, show the 'E'
             else
             {
-                if (interactPrompt != null) interactPrompt.SetActive(true);
+                // FIX: Tell the Singleton which specific bubble to turn on!
+                PlayerContextClue.Instance.ShowClue(bubbleType);
                 
-                // Press 'E' to start talking
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    PlayerContextClue.Instance.HideClue(); 
                     DialogueManager.Instance.StartDialogue(myLines);
                 }
             }
@@ -53,12 +46,7 @@ public class DialogueTrigger : MonoBehaviour
         if (other.CompareTag("Player")) 
         {
             playerInRange = false;
-            
-            // Hide the 'E' when she walks away
-            if (interactPrompt != null) 
-            {
-                interactPrompt.SetActive(false);
-            }
+            PlayerContextClue.Instance.HideClue();
         }
     }
 }

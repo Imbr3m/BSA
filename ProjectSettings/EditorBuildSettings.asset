@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu/MainMenu.unity
     guid: d9cec1b749ca82d48b946922bd8dedc0
   - enabled: 1
+    path: Assets/Scenes/Scene 1/s1_bed_room 1.unity
+    guid: 498c22befd35e9c40bf4fa3b757d40dc
+  - enabled: 1
+    path: Assets/Scenes/Scene 1/s1_living_room 1.unity
+    guid: 025b8f944361d6c4dab9e64210fcea0a
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
