@@ -25,7 +25,7 @@ public class PartyManager : MonoBehaviour
             AddMemberToPartyByName(defaultPartyMember.MemberName);
         }
 
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
     }
 
     public void AddMemberToPartyByName(string memberName)
