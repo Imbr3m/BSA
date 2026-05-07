@@ -71,86 +71,49 @@ public class CharacterManager : MonoBehaviour
         SpawnOverworldMembers(); // adding an overworld member
     }
 
+ 
     private void SpawnOverworldMembers()
     {
+        // 1. Destroy old followers, but DO NOT destroy the Player!
         for (int i = 0; i < overworldCharacters.Count; i++)
         {
-            Destroy(overworldCharacters[i]);
+            if (overworldCharacters[i] != gameObject) 
+            {
+                Destroy(overworldCharacters[i]);
+            }
         }
         overworldCharacters.Clear();
 
         PartyManager partyManager = GameObject.FindFirstObjectByType<PartyManager>();
-        if (partyManager == null)
-        {
-            Debug.LogWarning($"{nameof(CharacterManager)}: No PartyManager found, cannot spawn overworld members.");
-            return;
-        }
+        if (partyManager == null) return;
 
         List<PartyMember> currentParty = partyManager.GetCurrentParty();
-        if (currentParty == null)
-        {
-            Debug.LogWarning($"{nameof(CharacterManager)}: currentParty is null on PartyManager.");
-            return;
-        }
+        if (currentParty == null) return;
 
         for (int i = 0; i < currentParty.Count; i++)
         {
-            if (i == 0) // first member will be the player
+            if (i == 0) 
             {
-                GameObject player = gameObject; // get the player
-
-                if (currentParty[i].MemberOverworldVisualPrefab == null)
-                {
-                    Debug.LogWarning($"{nameof(CharacterManager)}: Party member 0 has no overworld visual prefab.");
-                    continue;
-                }
-
-                GameObject playerVisual = Instantiate(currentParty[i].MemberOverworldVisualPrefab,
-                transform.position, Quaternion.identity); // spawn the member visual
-
-                playerVisual.transform.SetParent(player.transform, true); // settting the parent to the player
-                playerVisual.transform.localPosition = Vector3.zero;
-
-                Animator playerAnim = playerVisual.GetComponent<Animator>();
-                if (playerAnim == null) playerAnim = playerVisual.GetComponentInChildren<Animator>();
-
-                SpriteRenderer playerSprite = playerVisual.GetComponent<SpriteRenderer>();
-                if (playerSprite == null) playerSprite = playerVisual.GetComponentInChildren<SpriteRenderer>();
-
-                player.GetComponent<PlayerController>().SetOverworldVisuals(playerAnim,
-                playerSprite, playerVisual.transform.localScale); // assign the player controller values
-                // Player visual should not follow anything.
-                MemberFollowAI playerFollow = playerVisual.GetComponent<MemberFollowAI>();
-                if (playerFollow == null) playerFollow = playerVisual.GetComponentInChildren<MemberFollowAI>();
-                if (playerFollow != null) playerFollow.enabled = false;
-                overworldCharacters.Add(playerVisual); // add the overworld character visual to the list
+                overworldCharacters.Add(gameObject); 
             }
-            else // any other will be a follower
+            else 
             {
-                Vector3 positionToSpawn = transform.position;// get the followers spawn position
+                Vector3 positionToSpawn = transform.position;
+                positionToSpawn.x -= i * 2.0f;
 
-                float spacing = 2.0f; 
-                positionToSpawn.x -= i * spacing;
+                GameObject tempFollower = Instantiate(currentParty[i].MemberOverworldVisualPrefab, positionToSpawn, Quaternion.identity);
 
-
-                if (currentParty[i].MemberOverworldVisualPrefab == null)
-                {
-                    Debug.LogWarning($"{nameof(CharacterManager)}: Party member {i} has no overworld visual prefab.");
-                    continue;
-                }
-
-                GameObject tempFollower = Instantiate(currentParty[i].MemberOverworldVisualPrefab,
-                positionToSpawn, Quaternion.identity);// spawn the follower
-
-                // Follower AI might be on the root or a child, and might be disabled on the prefab (e.g., Soldier).
                 MemberFollowAI followerAI = tempFollower.GetComponent<MemberFollowAI>();
                 if (followerAI == null) followerAI = tempFollower.GetComponentInChildren<MemberFollowAI>();
+                
                 if (followerAI != null)
                 {
                     followerAI.enabled = true;
+                    // Tell them to follow the person in front of them
                     followerAI.SetFollowTarget(overworldCharacters[i - 1].transform);
                 }
-                overworldCharacters.Add(tempFollower); // add the follower visual to our list
+                
+                overworldCharacters.Add(tempFollower); 
             }
         }
     }
