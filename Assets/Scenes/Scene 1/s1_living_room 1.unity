@@ -1863,8 +1863,8 @@ MonoBehaviour:
   playerAnimator: {fileID: 1097030384}
   walkX: moveX
   walkY: moveY
-  idleX: lastMoveX
-  idleY: lastMoveY
+  idleX: moveX
+  idleY: moveY
   faceX: 1
   faceY: 0
 --- !u!114 &1183828194
@@ -1883,6 +1883,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: b70b0134a848f6948ae6fe6f57197c02, type: 2}
     - {fileID: 11400000, guid: 7725b58e0653a5842ab5082522469e5c, type: 2}
+    - {fileID: 11400000, guid: 1f9e617739dbf324f8ef66fa4dac4ac0, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1903,6 +1904,20 @@ MonoBehaviour:
         - m_Target: {fileID: 1183828193}
           m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
           m_MethodName: EndCutscene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1183828193}
+          m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
+          m_MethodName: TurnLeft
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2454,12 +2469,12 @@ PrefabInstance:
     - target: {fileID: 2296864047788425461, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.16534042
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2296864047788425461, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.7400002
+      value: -8.35
       objectReference: {fileID: 0}
     - target: {fileID: 2579995043345338270, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
@@ -2535,12 +2550,12 @@ PrefabInstance:
     - target: {fileID: 7299752528325690438, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4100001
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 7299752528325690438, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.7400002
+      value: -8.35
       objectReference: {fileID: 0}
     - target: {fileID: 8288957565612815371, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}

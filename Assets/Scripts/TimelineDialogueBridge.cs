@@ -68,4 +68,26 @@ public class TimelineDialogueBridge : MonoBehaviour
             realPlayer.isAiming = false; 
         }
     }
+
+    // --- DIRECTIONAL FIXES FOR TIMELINE SIGNALS ---
+    
+    public void TurnRight() 
+    { 
+        faceX = 1f; faceY = 0f; 
+    }
+    
+    public void TurnLeft() 
+    { 
+        faceX = -1f; faceY = 0f; 
+    }
+    
+    public void TurnUp() 
+    { 
+        faceX = 0f; faceY = 1f; 
+    }
+    
+    public void TurnDown() 
+    { 
+        faceX = 0f; faceY = -1f; 
+    }
 }
