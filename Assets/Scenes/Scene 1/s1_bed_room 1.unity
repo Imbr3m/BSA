@@ -509,6 +509,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &457495892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457495887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: b70b0134a848f6948ae6fe6f57197c02, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 991042998}
+          m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
+          m_MethodName: EndCutscene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &462888306
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,17 +1024,17 @@ PrefabInstance:
     - target: {fileID: 3347418234564613694, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3347418234564613694, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3347418234564613694, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.29
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3347418234564613694, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
@@ -1034,12 +1064,12 @@ PrefabInstance:
     - target: {fileID: 4363858985132435528, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.12
+      value: 6.32
       objectReference: {fileID: 0}
     - target: {fileID: 4363858985132435528, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.542
+      value: -4.75
       objectReference: {fileID: 0}
     - target: {fileID: 6975995668669686194, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
@@ -1054,12 +1084,12 @@ PrefabInstance:
     - target: {fileID: 7299752528325690438, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.12
+      value: 6.32
       objectReference: {fileID: 0}
     - target: {fileID: 7299752528325690438, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.542
+      value: -8.75
       objectReference: {fileID: 0}
     - target: {fileID: 8288957565612815371, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
@@ -1119,6 +1149,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 457495891}
+    - targetCorrespondingSourceObject: {fileID: 3422297648082112317, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 457495892}
   m_SourcePrefab: {fileID: 100100000, guid: 374ac57dacb321445a59186f1d8006f2, type: 3}
 --- !u!1 &810065522
 GameObject:
@@ -1229,6 +1263,8 @@ GameObject:
   m_Component:
   - component: {fileID: 991042996}
   - component: {fileID: 991042997}
+  - component: {fileID: 991042998}
+  - component: {fileID: 991042999}
   m_Layer: 0
   m_Name: IntroCutscene
   m_TagString: Untagged
@@ -1272,8 +1308,92 @@ PlayableDirector:
     value: {fileID: 1770778792}
   - key: {fileID: -362941842809945469, guid: ec2c47f634c7bea4d952a8ef76075131, type: 2}
     value: {fileID: 1770778792}
+  - key: {fileID: 7460218509786048398, guid: ec2c47f634c7bea4d952a8ef76075131, type: 2}
+    value: {fileID: 991042999}
+  - key: {fileID: -1166115200770624607, guid: ec2c47f634c7bea4d952a8ef76075131, type: 2}
+    value: {fileID: 991042999}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &991042998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991042995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef9a407f86309d498bae04a69b08dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timelineDirector: {fileID: 991042997}
+  introLines:
+  - Name: Sampaguita
+    CharacterPortrait: {fileID: -1614960276, guid: 24de519c439b0cf428db8962649b49c0,
+      type: 3}
+    VoiceSound: {fileID: 8300000, guid: 163fac438ae9ef84b964faca18db44ed, type: 3}
+    DialogueToPrint: 'My head hurts... '
+    LettersPerSecond: 15
+  - Name: Sampaguita
+    CharacterPortrait: {fileID: -1614960276, guid: 24de519c439b0cf428db8962649b49c0,
+      type: 3}
+    VoiceSound: {fileID: 8300000, guid: 163fac438ae9ef84b964faca18db44ed, type: 3}
+    DialogueToPrint: Was I dreaming?
+    LettersPerSecond: 15
+  - Name: NANAY
+    CharacterPortrait: {fileID: -1614960276, guid: 24de519c439b0cf428db8962649b49c0,
+      type: 3}
+    VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
+    DialogueToPrint: 'Sampaguita! Come here.
+
+'
+    LettersPerSecond: 15
+  realPlayer: {fileID: 1514707742}
+--- !u!114 &991042999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991042995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: b70b0134a848f6948ae6fe6f57197c02, type: 2}
+    - {fileID: 11400000, guid: 7725b58e0653a5842ab5082522469e5c, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 991042998}
+          m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
+          m_MethodName: StartCutsceneDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 991042998}
+          m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
+          m_MethodName: EndCutscene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1084783205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,6 +1891,18 @@ Transform:
   - {fileID: 605885013}
   m_Father: {fileID: 763413097}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1514707742 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2010685539746945143, guid: 374ac57dacb321445a59186f1d8006f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 806414592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def1bf087537d694a84cb08a58b4b2f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1770778792 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 442462730936844678, guid: 374ac57dacb321445a59186f1d8006f2,
