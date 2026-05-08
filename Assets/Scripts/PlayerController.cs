@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Speeds")]
+    public bool canRun = true;
     [SerializeField] private float walkSpeed = 5f;
     [SerializeField] private float crouchSpeed = 2f;
     [SerializeField] private float runSpeed = 8f; 
@@ -118,7 +119,7 @@ public class PlayerController : MonoBehaviour
         // crouch
         isCrouching = playerControls.Player.Crouch.IsPressed();
         // run
-        bool isRunning = playerControls.Player.Run.IsPressed(); 
+        bool isRunning = playerControls.Player.Run.IsPressed() && canRun;
         movement = new Vector3(x, 0, z).normalized;
         bool isMoving = movement != Vector3.zero;
 

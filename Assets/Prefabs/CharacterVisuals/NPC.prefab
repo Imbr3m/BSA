@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLines: []
-  interactPrompt: {fileID: 3855155554141408761}
+  bubbleType: 0
 --- !u!111 &6297265996945836534
 Animation:
   m_ObjectHideFlags: 0
