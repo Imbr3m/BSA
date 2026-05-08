@@ -270,4 +270,21 @@ public class PlayerController : MonoBehaviour
         playerSprite = spriteRenderer;
         transform.localScale = scale;
     }
+
+    public void RefreshVisuals()
+    {
+        // 1. First, find the active SpriteRenderer (which correctly grabs Sampaguita_NEW)
+        playerSprite = GetComponentInChildren<SpriteRenderer>();
+
+        // 2. Tell the script: "Look at the object you just found, and grab its Animator!"
+        if (playerSprite != null)
+        {
+            anim = playerSprite.GetComponent<Animator>();
+            Debug.Log("Successfully linked new Animator: " + anim.gameObject.name);
+        }
+        else
+        {
+            Debug.LogWarning("Could not find the new SpriteRenderer!");
+        }
+    }
 }
