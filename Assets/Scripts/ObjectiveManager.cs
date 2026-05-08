@@ -32,13 +32,16 @@ public class ObjectiveManager : MonoBehaviour
         
         if (flowersCollected < totalFlowersNeeded)
         {
-            // Updates the text to show progress! e.g., "Collect all Flowers (1/3)"
-            SetObjective("Collect all Flowers (" + flowersCollected + "/" + totalFlowersNeeded + ")");
+            SetObjective("Objective: Collect all Flowers (" + flowersCollected + "/" + totalFlowersNeeded + ")");
         }
         else
         {
-            // The quest is done!
-            SetObjective("Go back and talk to Nanay!");
+            SetObjective(" Objective: Go back and talk to Nanay!");
         }
+    }
+
+    public bool IsQuestComplete()
+    {
+        return flowersCollected >= totalFlowersNeeded;
     }
 }
