@@ -120,6 +120,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!212 &183458668 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4236285421551984856, guid: 374ac57dacb321445a59186f1d8006f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 806414592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &216142445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,6 +1075,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1854160635, guid: 8ab95c1887550764ba6d3f09c88169ec,
         type: 3}
+    - target: {fileID: 2820907799757616992, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.57
+      objectReference: {fileID: 0}
     - target: {fileID: 3198783477580357945, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: maxSanity
@@ -1114,6 +1125,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Core
       objectReference: {fileID: 0}
+    - target: {fileID: 4236285421551984856, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.7019608
+      objectReference: {fileID: 0}
     - target: {fileID: 4363858985132435528, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1124,6 +1140,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.75
       objectReference: {fileID: 0}
+    - target: {fileID: 5839493301899719469, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      propertyPath: bubbleSprite
+      value: 
+      objectReference: {fileID: 183458668}
     - target: {fileID: 6362767106862492619, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_IsActive
@@ -1198,6 +1219,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8741175253869220751, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1834,7 +1860,6 @@ GameObject:
   - component: {fileID: 1251857811}
   - component: {fileID: 1251857810}
   - component: {fileID: 1251857809}
-  - component: {fileID: 1251857812}
   - component: {fileID: 1251857808}
   m_Layer: 0
   m_Name: SceneTrigger
@@ -1929,24 +1954,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1251857812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251857807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cb7d04c7929a2b489a0ebf257ec3f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myLines:
-  - Name: adawdad
-    VoiceSound: {fileID: 0}
-    DialogueToPrint: awdawda
-    LettersPerSecond: 12
-  bubbleType: 0
 --- !u!1 &1306445020
 GameObject:
   m_ObjectHideFlags: 0
