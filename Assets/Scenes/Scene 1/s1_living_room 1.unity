@@ -2638,10 +2638,10 @@ MonoBehaviour:
   playerAnimator: {fileID: 839015343}
   walkX: moveX
   walkY: moveY
-  idleX: lastMoveX
-  idleY: lastMoveY
-  faceX: 0
-  faceY: 1
+  idleX: moveX
+  idleY: moveY
+  faceX: 1
+  faceY: 0
 --- !u!1001 &1054302707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3147,8 +3147,8 @@ MonoBehaviour:
   playerAnimator: {fileID: 1097030384}
   walkX: moveX
   walkY: moveY
-  idleX: lastMoveX
-  idleY: lastMoveY
+  idleX: moveX
+  idleY: moveY
   faceX: 1
   faceY: 0
 --- !u!1 &1299495295
@@ -3799,7 +3799,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Hug your Tatay
+            m_StringArgument: 'Objective: Hug your Tatay'
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1001 &1437291253
@@ -4775,10 +4775,10 @@ MonoBehaviour:
   playerAnimator: {fileID: 1097030384}
   walkX: moveX
   walkY: moveY
-  idleX: lastMoveX
-  idleY: lastMoveY
-  faceX: 1
-  faceY: 0
+  idleX: moveX
+  idleY: moveY
+  faceX: 0
+  faceY: 1
 --- !u!1001 &1675381611
 PrefabInstance:
   m_ObjectHideFlags: 0
