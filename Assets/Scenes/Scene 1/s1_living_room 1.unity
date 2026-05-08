@@ -1629,6 +1629,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1054302707}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &839015343 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6742329655443256406, guid: 540b6d251750414449c30e6150e05cfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1054302707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &842983221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,6 +1975,9 @@ Transform:
   m_Children:
   - {fileID: 1657847813}
   - {fileID: 1228241566}
+  - {fileID: 1044957535}
+  - {fileID: 1674075599}
+  - {fileID: 1612087668}
   m_Father: {fileID: 679646069}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!320 &1011825029
@@ -1998,6 +2007,12 @@ PlayableDirector:
     value: {fileID: 2030095339}
   - key: {fileID: 7929750229717195991, guid: e56ec186d63d9644e9a94d114c3332c6, type: 2}
     value: {fileID: 2030095343}
+  - key: {fileID: -4393605824472675421, guid: e56ec186d63d9644e9a94d114c3332c6, type: 2}
+    value: {fileID: 839015343}
+  - key: {fileID: 2458319712099087322, guid: e56ec186d63d9644e9a94d114c3332c6, type: 2}
+    value: {fileID: 1401931877}
+  - key: {fileID: 5324717405464222020, guid: e56ec186d63d9644e9a94d114c3332c6, type: 2}
+    value: {fileID: 1401931878}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &1011825030
@@ -2268,6 +2283,69 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa886f72b0a6c4f4d86a33f194727001, type: 3}
+--- !u!1 &1044957534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1044957535}
+  - component: {fileID: 1044957536}
+  m_Layer: 0
+  m_Name: DialoguePart3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1044957535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044957534}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1011825028}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1044957536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044957534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef9a407f86309d498bae04a69b08dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timelineDirector: {fileID: 1011825029}
+  introLines:
+  - Name: NANAY
+    VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
+    DialogueToPrint: "Hehe, isn\u2019t it? Here. This is for you, our little flower.\r"
+    LettersPerSecond: 15
+  - Name: 
+    VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    DialogueToPrint: 'NANAY hands SAMPAGUITA the wreath of sampaguitas by crowning
+      it on her head. '
+    LettersPerSecond: 15
+  realPlayer: {fileID: 133291674}
+  playerAnimator: {fileID: 1097030384}
+  walkX: moveX
+  walkY: moveY
+  idleX: lastMoveX
+  idleY: lastMoveY
+  faceX: 1
+  faceY: 0
 --- !u!1001 &1054302707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3294,6 +3372,34 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1675381611}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1401931877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8017720743841713301, guid: 34ca27951509ab84b8566ec1ff6dee39,
+    type: 3}
+  m_PrefabInstance: {fileID: 1482030603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1401931878
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401931877}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3dc25166295f2ba408f0c168724afd72, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1437291253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3411,6 +3517,89 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2013521106}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1482030603
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6110864949654543011, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 594073013, guid: 65d8bf662d31cfd4cab47085cc4f8001,
+        type: 3}
+    - target: {fileID: 6110864949654543011, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017720743841713301, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_Name
+      value: NPC (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907262004139706082, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907262004139706082, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907262004139706082, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907262004139706082, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.97717553
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907262004139706082, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907262004139706082, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.21243352
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907262004139706082, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907262004139706082, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907262004139706082, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -24.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907262004139706082, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8017720743841713301, guid: 34ca27951509ab84b8566ec1ff6dee39,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1401931878}
+  m_SourcePrefab: {fileID: 100100000, guid: 34ca27951509ab84b8566ec1ff6dee39, type: 3}
 --- !u!1 &1494243547
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,6 +3961,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1612087667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612087668}
+  - component: {fileID: 1612087669}
+  m_Layer: 0
+  m_Name: DialoguePart5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1612087668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612087667}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1011825028}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1612087669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612087667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef9a407f86309d498bae04a69b08dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timelineDirector: {fileID: 1011825029}
+  introLines:
+  - Name: NANAY
+    VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
+    DialogueToPrint: "Hehe, isn\u2019t it? Here. This is for you, our little flower.\r"
+    LettersPerSecond: 15
+  - Name: 
+    VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    DialogueToPrint: 'NANAY hands SAMPAGUITA the wreath of sampaguitas by crowning
+      it on her head. '
+    LettersPerSecond: 15
+  realPlayer: {fileID: 133291674}
+  playerAnimator: {fileID: 1097030384}
+  walkX: moveX
+  walkY: moveY
+  idleX: lastMoveX
+  idleY: lastMoveY
+  faceX: 1
+  faceY: 0
 --- !u!1 &1654670336
 GameObject:
   m_ObjectHideFlags: 0
@@ -3896,6 +4148,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1011825028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1674075598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1674075599}
+  - component: {fileID: 1674075600}
+  m_Layer: 0
+  m_Name: DialoguePart4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1674075599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674075598}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1011825028}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1674075600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674075598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef9a407f86309d498bae04a69b08dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timelineDirector: {fileID: 1011825029}
+  introLines:
+  - Name: NANAY
+    VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
+    DialogueToPrint: "Hehe, isn\u2019t it? Here. This is for you, our little flower.\r"
+    LettersPerSecond: 15
+  - Name: 
+    VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    DialogueToPrint: 'NANAY hands SAMPAGUITA the wreath of sampaguitas by crowning
+      it on her head. '
+    LettersPerSecond: 15
+  realPlayer: {fileID: 133291674}
+  playerAnimator: {fileID: 1097030384}
+  walkX: moveX
+  walkY: moveY
+  idleX: lastMoveX
+  idleY: lastMoveY
+  faceX: 1
+  faceY: 0
 --- !u!1001 &1675381611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5621,4 +5936,5 @@ SceneRoots:
   - {fileID: 1654670338}
   - {fileID: 1675381611}
   - {fileID: 2013521106}
+  - {fileID: 1482030603}
   - {fileID: 679646069}
