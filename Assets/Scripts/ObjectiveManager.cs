@@ -18,7 +18,6 @@ public class ObjectiveManager : MonoBehaviour
         if (Instance == null) Instance = this;
     }
 
-    // You can call this from ANYWHERE to change the text!
     public void SetObjective(string newObjective)
     {
         if (objectiveText != null)
@@ -27,7 +26,6 @@ public class ObjectiveManager : MonoBehaviour
         }
     }
 
-    // Call this when Sampaguita touches a flower
     public void CollectFlower()
     {
         flowersCollected++;
