@@ -1922,7 +1922,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1011825028}
   - component: {fileID: 1011825029}
-  - component: {fileID: 1011825031}
   - component: {fileID: 1011825030}
   m_Layer: 0
   m_Name: FlowerQuestCompleteScene
@@ -1943,7 +1942,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1657847813}
+  - {fileID: 1228241566}
   m_Father: {fileID: 679646069}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!320 &1011825029
@@ -1984,16 +1985,17 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 7725b58e0653a5842ab5082522469e5c, type: 2}
     - {fileID: 11400000, guid: b70b0134a848f6948ae6fe6f57197c02, type: 2}
     - {fileID: 11400000, guid: 1f9e617739dbf324f8ef66fa4dac4ac0, type: 2}
+    - {fileID: 11400000, guid: 90f78994c04a37345b90a395e3f8d94d, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1011825027}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
+          m_MethodName: EndCutscene
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2001,13 +2003,13 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1011825027}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
+        - m_Target: {fileID: 1657847812}
+          m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
+          m_MethodName: StartCutsceneDialogue
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2015,28 +2017,20 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls: []
---- !u!114 &1011825031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011825027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef9a407f86309d498bae04a69b08dc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timelineDirector: {fileID: 1011825029}
-  introLines: []
-  realPlayer: {fileID: 133291674}
-  playerAnimator: {fileID: 0}
-  walkX: moveX
-  walkY: moveY
-  idleX: lastMoveX
-  idleY: lastMoveY
-  faceX: 1
-  faceY: 0
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1228241567}
+          m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
+          m_MethodName: StartCutsceneDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1015489861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2598,6 +2592,69 @@ Transform:
   - {fileID: 451231818}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1228241565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1228241566}
+  - component: {fileID: 1228241567}
+  m_Layer: 0
+  m_Name: DialoguePart2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1228241566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228241565}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1011825028}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1228241567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228241565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef9a407f86309d498bae04a69b08dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timelineDirector: {fileID: 1011825029}
+  introLines:
+  - Name: NANAY
+    VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
+    DialogueToPrint: "Hehe, isn\u2019t it? Here. This is for you, our little flower.\r"
+    LettersPerSecond: 15
+  - Name: 
+    VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    DialogueToPrint: 'NANAY hands SAMPAGUITA the wreath of sampaguitas by crowning
+      it on her head. '
+    LettersPerSecond: 15
+  realPlayer: {fileID: 133291674}
+  playerAnimator: {fileID: 1097030384}
+  walkX: moveX
+  walkY: moveY
+  idleX: lastMoveX
+  idleY: lastMoveY
+  faceX: 1
+  faceY: 0
 --- !u!1 &1299495295
 GameObject:
   m_ObjectHideFlags: 0
@@ -3614,6 +3671,77 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1657847811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657847813}
+  - component: {fileID: 1657847812}
+  m_Layer: 0
+  m_Name: DialoguePart1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1657847812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657847811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef9a407f86309d498bae04a69b08dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timelineDirector: {fileID: 1011825029}
+  introLines:
+  - Name: SAMPAGUITA
+    VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    DialogueToPrint: Here you go Nanay!
+    LettersPerSecond: 15
+  - Name: NANAY
+    VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
+    DialogueToPrint: "Thank you dear.\r"
+    LettersPerSecond: 15
+  - Name: 
+    VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    DialogueToPrint: "Thanks to SAMPAGUITA\u2019s help, her NANAY managed to complete
+      the wreath. SAMPAGUITA was amazed by her NANAY\u2019S work.\r"
+    LettersPerSecond: 15
+  - Name: SAMPAGUITA
+    VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    DialogueToPrint: Woah! This looks so pretty!
+    LettersPerSecond: 15
+  realPlayer: {fileID: 133291674}
+  playerAnimator: {fileID: 1097030384}
+  walkX: moveX
+  walkY: moveY
+  idleX: lastMoveX
+  idleY: lastMoveY
+  faceX: 1
+  faceY: 0
+--- !u!4 &1657847813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657847811}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1011825028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1675381611
 PrefabInstance:
