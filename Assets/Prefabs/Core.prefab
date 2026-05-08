@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def1bf087537d694a84cb08a58b4b2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canRun: 1
   walkSpeed: 3
   crouchSpeed: 0
   runSpeed: 8
@@ -200,6 +201,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueBubble: {fileID: 8741175253869220751}
   bubbleAnim: {fileID: 7957294027487806232}
+  bubbleSprite: {fileID: 0}
+  fadeDuration: 0.2
+  moveDistance: 0.3
 --- !u!54 &7853185460627390809
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -681,6 +685,52 @@ MonoBehaviour:
   soundFXObject: {fileID: 7447322021891705526, guid: 0d2bff080dd3ecb449a3ea1b0e48a7ef,
     type: 3}
   uiAudioSource: {fileID: 7545332614889900991}
+--- !u!1 &5225324639020143815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8514900163192090149}
+  - component: {fileID: 5529957606642052120}
+  m_Layer: 0
+  m_Name: ObjectiveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8514900163192090149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225324639020143815}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 30751491027757458}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5529957606642052120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225324639020143815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7958d1b3c512e45959a1a419513377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveText: {fileID: 4983892284785530306}
+  totalFlowersNeeded: 4
 --- !u!1 &5777241318799265904
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +895,7 @@ Transform:
   - {fileID: 2813825735866012942}
   - {fileID: 4358726780744327074}
   - {fileID: 7365868078828178934}
+  - {fileID: 8514900163192090149}
   m_Father: {fileID: 8288957565612815371}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7128768390937128484
@@ -891,7 +942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c030b274b67da24a8c457f0f9d50cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSanity: 100
+  maxSanity: 300
   currentSanity: 0
   sanityDrainRate: 1
   colorDrainThreshold: 0.2
@@ -1477,6 +1528,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1458781466202523220}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4983892284785530306 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5842564697716380566, guid: 3d920b646cc582b45be0b8735e581b9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1458781466202523220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7821588762440176004 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8697998487318681552, guid: 3d920b646cc582b45be0b8735e581b9e,
