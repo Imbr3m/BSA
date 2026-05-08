@@ -1922,6 +1922,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1011825028}
   - component: {fileID: 1011825029}
+  - component: {fileID: 1011825031}
+  - component: {fileID: 1011825030}
   m_Layer: 0
   m_Name: FlowerQuestCompleteScene
   m_TagString: Untagged
@@ -1962,9 +1964,79 @@ PlayableDirector:
   - key: {fileID: -3637684203450522606, guid: e56ec186d63d9644e9a94d114c3332c6, type: 2}
     value: {fileID: 1299495296}
   - key: {fileID: -1862189508910211965, guid: e56ec186d63d9644e9a94d114c3332c6, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1011825030}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1011825030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011825027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 7725b58e0653a5842ab5082522469e5c, type: 2}
+    - {fileID: 11400000, guid: b70b0134a848f6948ae6fe6f57197c02, type: 2}
+    - {fileID: 11400000, guid: 1f9e617739dbf324f8ef66fa4dac4ac0, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1011825027}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1011825027}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1011825031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011825027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef9a407f86309d498bae04a69b08dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timelineDirector: {fileID: 1011825029}
+  introLines: []
+  realPlayer: {fileID: 133291674}
+  playerAnimator: {fileID: 0}
+  walkX: moveX
+  walkY: moveY
+  idleX: lastMoveX
+  idleY: lastMoveY
+  faceX: 1
+  faceY: 0
 --- !u!1001 &1015489861
 PrefabInstance:
   m_ObjectHideFlags: 0
