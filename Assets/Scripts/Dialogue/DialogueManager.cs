@@ -1,7 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,7 +10,6 @@ public class DialogueManager : MonoBehaviour
     public class DialogueSegment
     {
         public string Name;
-        public Sprite CharacterPortrait; 
         public AudioClip VoiceSound;     
         [TextArea] public string DialogueToPrint;
         public float LettersPerSecond = 20f;
@@ -20,7 +18,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text bodyText;
-    [SerializeField] private Image portraitHolder; 
 
     private DialogueSegment[] currentSegments;
     private int dialogueIndex;
@@ -31,9 +28,6 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         if (Instance == null) Instance = this;
-
-        // FIX 1: Removed dialoguePanel.SetActive(false); 
-        // The box will now stay visible when the game starts.
     }
 
     void Update()
@@ -53,7 +47,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIndex = 0;
         PlayingDialogue = true;
         
-        // Ensure it's active just in case it was hidden manually
+        // Ensure it's visible just in case you manually turned it off in the Inspector
         if (dialoguePanel != null) dialoguePanel.SetActive(true); 
         
         PlayNextSegment();
@@ -69,14 +63,11 @@ public class DialogueManager : MonoBehaviour
         {
             PlayingDialogue = false;
             
-            // clears the dialogue after finish
+            // Clear the text so the box is empty!
             bodyText.text = ""; 
             nameText.text = "";
 
-            if (portraitHolder != null) 
-            {
-                portraitHolder.gameObject.SetActive(false);
-            }
+            // No SetActive(false) here anymore. The box stays forever!
         }
     }
 
@@ -85,26 +76,8 @@ public class DialogueManager : MonoBehaviour
         isTyping = true;
         skip = false;
         
-        // FIX 2: Removed the Undertale asterisk
         bodyText.text = ""; 
-        
         nameText.text = segment.Name; 
-
-        // FIX 3: Portrait Safety Check
-        // If CharacterPortrait is empty in the Inspector, it simply hides the Image 
-        // component so you don't see a white square. It won't crash your game!
-        if (portraitHolder != null)
-        {
-            if (segment.CharacterPortrait != null)
-            {
-                portraitHolder.gameObject.SetActive(true);
-                portraitHolder.sprite = segment.CharacterPortrait;
-            }
-            else
-            {
-                portraitHolder.gameObject.SetActive(false); 
-            }
-        }
 
         float delay = 1f / segment.LettersPerSecond;
         
