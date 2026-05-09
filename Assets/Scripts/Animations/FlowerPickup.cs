@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class FlowerPickup : MonoBehaviour
 {
+    [Header("Audio Settings")]
+    [Tooltip("Drop your pickup sound effect here!")]
+    public AudioClip pickupSound; 
+    [Range(0f, 1f)] public float soundVolume = 1f;
+
     private bool isPlayerInRange = false;
     private PlayerContextClue playerClueScript; 
 
@@ -42,6 +47,11 @@ public class FlowerPickup : MonoBehaviour
             }
 
             ObjectiveManager.Instance.CollectFlower();
+
+            if (pickupSound != null && SoundFXManager.instance != null)
+            {
+                SoundFXManager.instance.PlaySoundFXClip(pickupSound, transform, soundVolume);
+            }
             
             Destroy(gameObject);
         }

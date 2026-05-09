@@ -376,6 +376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8548719eda6cbc4cace646c31629a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupSound: {fileID: 8300000, guid: 17de18223930a7a4c865380700a4a69b, type: 3}
+  soundVolume: 1
 --- !u!114 &230779630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,6 +1017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8548719eda6cbc4cace646c31629a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupSound: {fileID: 8300000, guid: 17de18223930a7a4c865380700a4a69b, type: 3}
+  soundVolume: 1
 --- !u!114 &451231821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2038,6 +2042,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8548719eda6cbc4cace646c31629a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupSound: {fileID: 8300000, guid: 17de18223930a7a4c865380700a4a69b, type: 3}
+  soundVolume: 1
 --- !u!114 &857868046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2623,15 +2629,18 @@ MonoBehaviour:
   introLines:
   - Name: 
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: "While SAMPAGUITA admires her new look. A wooden door opens,
       showing the arrival of SAMPAGUITA\u2019S father.\r"
     LettersPerSecond: 15
   - Name: SAMPAGUITA
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: Tatay! Look at what NANAY made for me
     LettersPerSecond: 15
   - Name: TATAY
     VoiceSound: {fileID: 8300000, guid: 163fac438ae9ef84b964faca18db44ed, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: "SAMPAGUITA! There\u2019s my little flower! \r\nCome here will
       you.\r"
     LettersPerSecond: 15
@@ -3051,15 +3060,18 @@ MonoBehaviour:
   introLines:
   - Name: SAMPAGUITA
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: "What\u2019s this?"
     LettersPerSecond: 15
   - Name: NANAY
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: A wreath, I need your help with making it. Could you help gather
       flowers around the house?
     LettersPerSecond: 15
   - Name: SAMPAGUITA
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: Okay!
     LettersPerSecond: 15
   realPlayer: {fileID: 133291674}
@@ -3243,10 +3255,12 @@ MonoBehaviour:
   introLines:
   - Name: NANAY
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: "Hehe, isn\u2019t it? Here. This is for you, our little flower.\r"
     LettersPerSecond: 15
   - Name: 
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: 'NANAY hands SAMPAGUITA the wreath of sampaguitas by crowning
       it on her head. '
     LettersPerSecond: 15
@@ -3749,6 +3763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8548719eda6cbc4cace646c31629a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupSound: {fileID: 8300000, guid: 17de18223930a7a4c865380700a4a69b, type: 3}
+  soundVolume: 1
 --- !u!114 &1380467228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4615,10 +4631,12 @@ MonoBehaviour:
   introLines:
   - Name: NANAY
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: "Hehe, isn\u2019t it? Here. This is for you, our little flower.\r"
     LettersPerSecond: 15
   - Name: 
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: 'NANAY hands SAMPAGUITA the wreath of sampaguitas by crowning
       it on her head. '
     LettersPerSecond: 15
@@ -4716,19 +4734,23 @@ MonoBehaviour:
   introLines:
   - Name: SAMPAGUITA
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: Here you go Nanay!
     LettersPerSecond: 15
   - Name: NANAY
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: "Thank you dear.\r"
     LettersPerSecond: 15
   - Name: 
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: "Thanks to SAMPAGUITA\u2019s help, her NANAY managed to complete
       the wreath. SAMPAGUITA was amazed by her NANAY\u2019S work.\r"
     LettersPerSecond: 15
   - Name: SAMPAGUITA
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: Woah! This looks so pretty!
     LettersPerSecond: 15
   realPlayer: {fileID: 133291674}
@@ -4803,17 +4825,20 @@ MonoBehaviour:
   introLines:
   - Name: TATAY
     VoiceSound: {fileID: 8300000, guid: 163fac438ae9ef84b964faca18db44ed, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: "I see you\u2019ve done something with your hair. You look pretty,
       my little flower.\r\n"
     LettersPerSecond: 15
   - Name: SAMPAGUITA
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: 'Hehe! Thank you Tay!
 
 '
     LettersPerSecond: 15
   - Name: 
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: SAMPAGUITA jumps around. While their parents giggled at her
       infectious glee.
     LettersPerSecond: 15
@@ -4886,10 +4911,12 @@ MonoBehaviour:
   introLines:
   - Name: NANAY
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: "Hehe, isn\u2019t it? Here. This is for you, our little flower.\r"
     LettersPerSecond: 15
   - Name: 
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: 'NANAY hands SAMPAGUITA the wreath of sampaguitas by crowning
       it on her head. '
     LettersPerSecond: 15

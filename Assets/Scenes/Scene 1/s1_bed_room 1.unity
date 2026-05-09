@@ -350,6 +350,12 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &350399424 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4563031651756383912, guid: 374ac57dacb321445a59186f1d8006f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 806414592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &359615011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,8 +2444,8 @@ MonoBehaviour:
   sceneToLoad: s1_living_room 1
   fadeScreen: {fileID: 457495889}
   fadeDuration: 1
-  transitionSound: {fileID: 8300000, guid: 6f41872460021814e8951d4bab98a3ed, type: 3}
-  audioToFade: {fileID: 0}
+  transitionSound: {fileID: 8300000, guid: 8983cf87f7f244741bfb4d43d895c7ca, type: 3}
+  audioToFade: {fileID: 350399424}
 --- !u!1 &1264125290
 GameObject:
   m_ObjectHideFlags: 0

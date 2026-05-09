@@ -31,7 +31,7 @@ public class SceneTransitionTrigger : MonoBehaviour
 
             if (transitionSound != null && SoundFXManager.instance != null)
             {
-                SoundFXManager.instance.PlayUIBeep(transitionSound, 1f);
+                SoundFXManager.instance.PlaySoundFXClip(transitionSound, transform, 1f);
             }
 
             StartCoroutine(FadeAndLoad());
