@@ -1441,6 +1441,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 392339811}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &398246225
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4974517155380125034, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.555751
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974517155380125034, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974517155380125034, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.406009
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974517155380125034, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.25486588
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974517155380125034, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974517155380125034, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.96697646
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974517155380125034, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974517155380125034, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974517155380125034, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 209.531
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974517155380125034, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657431164183227941, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b88e95c7e0f792f45a86a3f1209085ca,
+        type: 3}
+    - target: {fileID: 6657431164183227941, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 958ab9a2c0e27ff429c9655040b363a2, type: 2}
+    - target: {fileID: 7359910875445133510, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+        type: 3}
+      propertyPath: m_Name
+      value: Japanese Soldier
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a3faf8d0e88bcd41802dfc3436ae135, type: 3}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -7242,6 +7321,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &579834503 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 288812097350722421, guid: 2a3faf8d0e88bcd41802dfc3436ae135,
+    type: 3}
+  m_PrefabInstance: {fileID: 398246225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &684861478
 GameObject:
   m_ObjectHideFlags: 0
@@ -7253,6 +7338,7 @@ GameObject:
   - component: {fileID: 684861479}
   - component: {fileID: 684861481}
   - component: {fileID: 684861480}
+  - component: {fileID: 684861482}
   m_Layer: 0
   m_Name: Chase Camera
   m_TagString: Untagged
@@ -7332,6 +7418,51 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1431884946}
+--- !u!114 &684861482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684861478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: ac72503eb8d56e544b1baa6b16d583e9, type: 2}
+    - {fileID: 11400000, guid: 90f78994c04a37345b90a395e3f8d94d, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
+          m_MethodName: StartCutsceneDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1145060748}
+          m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
+          m_MethodName: StartCutsceneDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &729687438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8916,8 +9047,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1145060745}
+  - component: {fileID: 1145060748}
   m_Layer: 0
-  m_Name: Dialogue1
+  m_Name: Dialogue2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8938,6 +9070,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1145672881}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1145060748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145060744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef9a407f86309d498bae04a69b08dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timelineDirector: {fileID: 1145672882}
+  introLines:
+  - Name: Japanese Soldier
+    VoiceSound: {fileID: 8300000, guid: 163fac438ae9ef84b964faca18db44ed, type: 3}
+    OneShotSound: {fileID: 0}
+    DialogueToPrint: '*Speaking Japanese*'
+    LettersPerSecond: 20
+  - Name: Japanese Soldier
+    VoiceSound: {fileID: 8300000, guid: 163fac438ae9ef84b964faca18db44ed, type: 3}
+    OneShotSound: {fileID: 8300000, guid: e377e7b304ab33346a0b9355ef1b6fd2, type: 3}
+    DialogueToPrint: '*Speaking more Japanese*'
+    LettersPerSecond: 20
+  realPlayer: {fileID: 1527017911}
+  reversedPlayer: {fileID: 1372391026}
+  playerAnimator: {fileID: 1172879605}
+  walkX: moveX
+  walkY: moveY
+  idleX: moveX
+  idleY: moveY
+  faceX: 1
+  faceY: 0
 --- !u!1 &1145672880
 GameObject:
   m_ObjectHideFlags: 0
@@ -8948,6 +9113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1145672881}
   - component: {fileID: 1145672882}
+  - component: {fileID: 1145672883}
   m_Layer: 0
   m_Name: ChaseScene
   m_TagString: Untagged
@@ -8998,8 +9164,44 @@ PlayableDirector:
     value: {fileID: 1919323952}
   - key: {fileID: -1226802784378733859, guid: 428a3da68cf32f94e805a49a03c970d4, type: 2}
     value: {fileID: 684861478}
+  - key: {fileID: -5929161677579395116, guid: 428a3da68cf32f94e805a49a03c970d4, type: 2}
+    value: {fileID: 579834503}
+  - key: {fileID: -740136497226708002, guid: 428a3da68cf32f94e805a49a03c970d4, type: 2}
+    value: {fileID: 579834503}
+  - key: {fileID: -6236351629087265699, guid: 428a3da68cf32f94e805a49a03c970d4, type: 2}
+    value: {fileID: 1145672883}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1145672883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145672880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 90f78994c04a37345b90a395e3f8d94d, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1145060748}
+          m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
+          m_MethodName: StartCutsceneDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1151914640
 GameObject:
   m_ObjectHideFlags: 0
@@ -11919,6 +12121,7 @@ MonoBehaviour:
     DialogueToPrint: 'I need to find help... '
     LettersPerSecond: 20
   realPlayer: {fileID: 1527017911}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 2069048887}
   walkX: moveX
   walkY: moveY
@@ -13432,6 +13635,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3354343838936826030, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3427797257421214551, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_Name
@@ -14065,4 +14273,5 @@ SceneRoots:
   - {fileID: 2112970262}
   - {fileID: 1948779221}
   - {fileID: 875937869}
+  - {fileID: 398246225}
   - {fileID: 1350992433}
