@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     [Header("Transition Settings")]
     [SerializeField] private Image blackFadeImage;
     [Tooltip("How long to stay pitch black before fading in")]
-    [SerializeField] private float waitBeforeFade = 0.5f; // NEW: The delay timer!
+    [SerializeField] private float waitBeforeFade = 0.5f; 
     [SerializeField] private float fadeDuration = 1.5f;
 
     private void Start()
@@ -27,8 +27,9 @@ public class MainMenu : MonoBehaviour
         // 1. Ensure it starts pitch black
         fadeColor.a = 1f; 
         blackFadeImage.color = fadeColor;
+        blackFadeImage.gameObject.SetActive(true); // Ensure it's turned on!
 
-        // 2. NEW: Wait right here for half a second!
+        // 2. Wait right here for half a second!
         yield return new WaitForSeconds(waitBeforeFade);
 
         // 3. Now start the smooth fade to reveal the menu
@@ -44,14 +45,42 @@ public class MainMenu : MonoBehaviour
         // Lock in the final transparent color
         fadeColor.a = 0f;
         blackFadeImage.color = fadeColor;
-        blackFadeImage.gameObject.SetActive(false);
+        blackFadeImage.gameObject.SetActive(false); // Turn it off so we can click buttons
     }
 
-    // --- Your original button functions below[cite: 28] ---
+    private IEnumerator FadeToBlackAndLoad(int sceneIndex)
+    {
+        blackFadeImage.gameObject.SetActive(true);
+        Color fadeColor = blackFadeImage.color;
+        fadeColor.a = 0f;
+        blackFadeImage.color = fadeColor;
+
+        float timer = 0f;
+        while (timer < fadeDuration)
+        {
+            timer += Time.deltaTime;
+            fadeColor.a = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+            blackFadeImage.color = fadeColor;
+            yield return null;
+        }
+
+        fadeColor.a = 1f;
+        blackFadeImage.color = fadeColor;
+
+        SceneManager.LoadSceneAsync(sceneIndex);
+    }
+
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync(2);
+        if (blackFadeImage != null)
+        {
+            StartCoroutine(FadeToBlackAndLoad(2));
+        }
+        else
+        {
+            SceneManager.LoadSceneAsync(2);
+        }
     }
 
     public void OpenCredits()

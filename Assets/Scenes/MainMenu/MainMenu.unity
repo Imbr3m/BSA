@@ -1316,8 +1316,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1720876216}
-  - component: {fileID: 1720876215}
   - component: {fileID: 1720876219}
+  - component: {fileID: 1720876215}
   - component: {fileID: 1720876214}
   - component: {fileID: 1720876218}
   - component: {fileID: 1720876220}
@@ -1777,8 +1777,6 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 8792724586301883822, guid: 942127f37fa217d49a4c5c933234d95f, type: 2}
-    value: {fileID: 590406726}
   - key: {fileID: -3142314584163579039, guid: 942127f37fa217d49a4c5c933234d95f, type: 2}
     value: {fileID: 1720876221}
   m_ExposedReferences:
