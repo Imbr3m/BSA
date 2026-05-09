@@ -1520,6 +1520,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.75
       objectReference: {fileID: 0}
+    - target: {fileID: 4563031651756383912, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c2beb9c1de4892643a0041384417928c, type: 3}
     - target: {fileID: 5839493301899719469, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: bubbleSprite
