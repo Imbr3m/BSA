@@ -3,22 +3,27 @@ using UnityEngine;
 public class DamageZone : MonoBehaviour
 {
     [SerializeField] private float damageAmount = 10f;
-    [SerializeField] private float damageInterval = 1.0f; // Every 1 second
+    [SerializeField] private float damageInterval = 1.0f;
     private float nextDamageTime;
 
     private void OnTriggerStay(Collider other)
     {
-        // Check if the object inside the trigger is the Player
         if (other.CompareTag("Player"))
         {
             if (Time.time >= nextDamageTime)
             {
-                // Find the PlayerController script on the object that entered
-                PlayerController player = other.GetComponent<PlayerController>();
-
-                if (player != null)
+                PlayerController normalPlayer = other.GetComponent<PlayerController>();
+                if (normalPlayer != null)
                 {
-                    player.TakeDamage(damageAmount); // Call the function we just made
+                    normalPlayer.TakeDamage(damageAmount); 
+                    nextDamageTime = Time.time + damageInterval;
+                    return;
+                }
+
+                ReversedPlayerController reversedPlayer = other.GetComponent<ReversedPlayerController>();
+                if (reversedPlayer != null)
+                {
+                    reversedPlayer.TakeDamage(damageAmount); 
                     nextDamageTime = Time.time + damageInterval;
                 }
             }

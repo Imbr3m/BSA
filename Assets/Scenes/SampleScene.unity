@@ -2672,26 +2672,32 @@ MonoBehaviour:
   myLines:
   - Name: Sampaguita
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: Hello Speaki from the hit chibi game Trickcal!
     LettersPerSecond: 15
   - Name: Speaki
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: Chuwayo Chuwayo
     LettersPerSecond: 15
   - Name: Speaki
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: UWAAHHH
     LettersPerSecond: 15
   - Name: Sampaguita
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: What?
     LettersPerSecond: 15
   - Name: Sampaguita
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: Uhhh... ok then... bye!
     LettersPerSecond: 15
   - Name: Speaki
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: UUUUWWWAAAAHHH
     LettersPerSecond: 30
   bubbleType: 0
@@ -9955,6 +9961,7 @@ MonoBehaviour:
   myLines:
   - Name: Sampaguita
     VoiceSound: {fileID: 8300000, guid: 163fac438ae9ef84b964faca18db44ed, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: Wow, These flowers are so cool and nice...
     LettersPerSecond: 10
   playOnlyOnce: 1
@@ -15152,6 +15159,16 @@ PrefabInstance:
       propertyPath: OnSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1410189700}
+    - target: {fileID: 2296864047788425461, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2296864047788425461, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 2827069424658636142, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: joinPopup
@@ -15166,6 +15183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Core
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186521394247905213, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8288957565612815371, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
