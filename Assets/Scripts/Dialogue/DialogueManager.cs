@@ -10,7 +10,8 @@ public class DialogueManager : MonoBehaviour
     public class DialogueSegment
     {
         public string Name;
-        public AudioClip VoiceSound;     
+        public AudioClip VoiceSound;    
+        public AudioClip OneShotSound;  
         [TextArea] public string DialogueToPrint;
         public float LettersPerSecond = 20f;
     }
@@ -78,6 +79,12 @@ public class DialogueManager : MonoBehaviour
         
         bodyText.text = ""; 
         nameText.text = segment.Name; 
+
+        // ==========================================
+        if (segment.OneShotSound != null && SoundFXManager.instance != null)
+        {
+            SoundFXManager.instance.PlayUIBeep(segment.OneShotSound, 1f); 
+        }
 
         float delay = 1f / segment.LettersPerSecond;
         

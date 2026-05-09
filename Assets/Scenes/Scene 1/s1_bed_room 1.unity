@@ -1705,6 +1705,7 @@ MonoBehaviour:
   myLines:
   - Name: Sampaguita
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: Our Bed
     LettersPerSecond: 15
   bubbleType: 0
@@ -1922,14 +1923,17 @@ MonoBehaviour:
   introLines:
   - Name: Sampaguita
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: 'My head hurts... '
     LettersPerSecond: 15
   - Name: Sampaguita
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: Was I dreaming?
     LettersPerSecond: 15
   - Name: NANAY
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: 'Sampaguita! Come here.
 
 '
@@ -2283,6 +2287,7 @@ MonoBehaviour:
   myLines:
   - Name: Sampaguita
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
+    OneShotSound: {fileID: 0}
     DialogueToPrint: My Closet
     LettersPerSecond: 15
   bubbleType: 0
@@ -2428,6 +2433,8 @@ MonoBehaviour:
   sceneToLoad: s1_living_room 1
   fadeScreen: {fileID: 457495889}
   fadeDuration: 1
+  transitionSound: {fileID: 8300000, guid: 6f41872460021814e8951d4bab98a3ed, type: 3}
+  audioToFade: {fileID: 0}
 --- !u!1 &1264125290
 GameObject:
   m_ObjectHideFlags: 0
