@@ -414,6 +414,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 978709861}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+--- !u!224 &286213426 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 9082452212434638110, guid: 374ac57dacb321445a59186f1d8006f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1675381611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &290912283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3156429609179275276, guid: 23931f245d072f048b6b66b9e75985a0,
@@ -2019,6 +2025,104 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &895624622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 895624623}
+  - component: {fileID: 895624626}
+  - component: {fileID: 895624625}
+  - component: {fileID: 895624624}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &895624623
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895624622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 286213426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -45, y: -16}
+  m_SizeDelta: {x: 431.682, y: 476.777}
+  m_Pivot: {x: 1, y: 1}
+--- !u!95 &895624624
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895624622}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 488a9cef296027249acb634beb6121ef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &895624625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895624622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1812201771, guid: 93d21a61c8eeb82469d96ff852a66dea, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &895624626
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895624622}
+  m_CullTransparentMesh: 1
 --- !u!4 &904035754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fb3309d7cb689a542b92c3c54c1a9e93,
@@ -2167,6 +2271,12 @@ PlayableDirector:
     value: {fileID: 1401931878}
   - key: {fileID: 5084662960189454651, guid: e56ec186d63d9644e9a94d114c3332c6, type: 2}
     value: {fileID: 1424810623}
+  - key: {fileID: -3041298411617812148, guid: e56ec186d63d9644e9a94d114c3332c6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7823911994371503100, guid: e56ec186d63d9644e9a94d114c3332c6, type: 2}
+    value: {fileID: 1123267600}
+  - key: {fileID: -4335148014886322129, guid: e56ec186d63d9644e9a94d114c3332c6, type: 2}
+    value: {fileID: 1123267598}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &1011825030
@@ -2188,6 +2298,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 1e7c2863734b83d43bc82757f4b5ebaa, type: 2}
     - {fileID: 11400000, guid: 90f78994c04a37345b90a395e3f8d94d, type: 2}
     - {fileID: 11400000, guid: f0c0440d33dd378419c95d9c66a3fa06, type: 2}
+    - {fileID: 11400000, guid: 79085df8b921c374cbe8c9373a8f5444, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -2257,6 +2368,20 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Objective Complete!
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1044957536}
+          m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
+          m_MethodName: StartCutsceneDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1001 &1015489861
@@ -2540,13 +2665,14 @@ MonoBehaviour:
       you.\r"
     LettersPerSecond: 15
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 839015343}
   walkX: moveX
   walkY: moveY
   idleX: moveX
   idleY: moveY
-  faceX: 1
-  faceY: 0
+  faceX: 0
+  faceY: -1
 --- !u!1001 &1054302707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2640,6 +2766,18 @@ Animator:
 --- !u!212 &1097030387 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2579995043345338270, guid: 374ac57dacb321445a59186f1d8006f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1675381611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1123267598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 978855188626891579, guid: 374ac57dacb321445a59186f1d8006f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1675381611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1123267600 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2090613391641906665, guid: 374ac57dacb321445a59186f1d8006f2,
     type: 3}
   m_PrefabInstance: {fileID: 1675381611}
   m_PrefabAsset: {fileID: 0}
@@ -2970,13 +3108,14 @@ MonoBehaviour:
     DialogueToPrint: Okay!
     LettersPerSecond: 15
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 1097030384}
   walkX: moveX
   walkY: moveY
   idleX: moveX
   idleY: moveY
-  faceX: 1
-  faceY: 0
+  faceX: 0
+  faceY: -1
 --- !u!114 &1183828194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3160,6 +3299,7 @@ MonoBehaviour:
       it on her head. '
     LettersPerSecond: 15
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 1097030384}
   walkX: moveX
   walkY: moveY
@@ -3327,6 +3467,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: d0ce39ac25d498a4f8b05a0f340c33d4, type: 2}
     - {fileID: 11400000, guid: 79085df8b921c374cbe8c9373a8f5444, type: 2}
+    - {fileID: 11400000, guid: 1065432640810d04582c8e16445b2117, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -3347,6 +3488,20 @@ MonoBehaviour:
         - m_Target: {fileID: 1044957536}
           m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
           m_MethodName: StartCutsceneDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1044957536}
+          m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
+          m_MethodName: TurnUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4536,6 +4691,7 @@ MonoBehaviour:
       it on her head. '
     LettersPerSecond: 15
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 1097030384}
   walkX: moveX
   walkY: moveY
@@ -4649,6 +4805,7 @@ MonoBehaviour:
     DialogueToPrint: Woah! This looks so pretty!
     LettersPerSecond: 15
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 1097030384}
   walkX: moveX
   walkY: moveY
@@ -4738,6 +4895,7 @@ MonoBehaviour:
       infectious glee.
     LettersPerSecond: 15
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 839015343}
   walkX: moveX
   walkY: moveY
@@ -4816,13 +4974,14 @@ MonoBehaviour:
       it on her head. '
     LettersPerSecond: 15
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 1097030384}
   walkX: moveX
   walkY: moveY
   idleX: moveX
   idleY: moveY
-  faceX: 0
-  faceY: 1
+  faceX: 1
+  faceY: 0
 --- !u!1001 &1675381611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4839,6 +4998,11 @@ PrefabInstance:
     - target: {fileID: 902616191163764082, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 978855188626891579, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2010685539746945143, guid: 374ac57dacb321445a59186f1d8006f2,
@@ -5052,6 +5216,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 598961376}
+    - targetCorrespondingSourceObject: {fileID: 9082452212434638110, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 895624623}
     - targetCorrespondingSourceObject: {fileID: 8514900163192090149, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       insertIndex: -1

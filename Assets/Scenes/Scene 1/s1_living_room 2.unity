@@ -348,6 +348,7 @@ MonoBehaviour:
     DialogueToPrint: Sampaguita! STAY BACK!
     LettersPerSecond: 40
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 880053975}
   walkX: moveX
   walkY: moveY
@@ -1649,6 +1650,7 @@ MonoBehaviour:
     DialogueToPrint: Sampaguita! STAY BACK!
     LettersPerSecond: 40
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 880053975}
   walkX: moveX
   walkY: moveY
@@ -1782,6 +1784,7 @@ MonoBehaviour:
       how we can keep up to preserve a bright future for our daughter\u2026"
     LettersPerSecond: 20
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 880053975}
   walkX: moveX
   walkY: moveY
@@ -2800,6 +2803,7 @@ MonoBehaviour:
     DialogueToPrint: Sampaguita! STAY BACK!
     LettersPerSecond: 40
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 880053975}
   walkX: moveX
   walkY: moveY
@@ -4596,6 +4600,7 @@ MonoBehaviour:
     DialogueToPrint: Yummers!
     LettersPerSecond: 20
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 880053975}
   walkX: moveX
   walkY: moveY
@@ -5237,6 +5242,7 @@ MonoBehaviour:
     DialogueToPrint: Sampaguita! STAY BACK!
     LettersPerSecond: 40
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 880053975}
   walkX: moveX
   walkY: moveY
@@ -5463,7 +5469,7 @@ PrefabInstance:
     - target: {fileID: 6362767106862492619, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6635330593339875237, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
@@ -5811,6 +5817,7 @@ MonoBehaviour:
     DialogueToPrint: SOMEONE'S COMING!!
     LettersPerSecond: 20
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 880053975}
   walkX: moveX
   walkY: moveY
@@ -6034,6 +6041,7 @@ MonoBehaviour:
 '
     LettersPerSecond: 20
   realPlayer: {fileID: 133291674}
+  reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 880053975}
   walkX: moveX
   walkY: moveY
