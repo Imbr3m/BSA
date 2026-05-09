@@ -1,0 +1,292 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ReversedPlayerController : MonoBehaviour
+{
+    [Header("Movement Speeds")]
+    public bool canRun = true;
+    [SerializeField] private float walkSpeed = 5f;
+    [SerializeField] private float crouchSpeed = 2f;
+    [SerializeField] private float runSpeed = 8f; 
+
+    [Header("Stamina Settings")]
+    [SerializeField] private Image staminaBarImage;
+    [SerializeField] private float maxStamina = 100f;
+    [SerializeField] private float drainRate = 25f;  
+    [SerializeField] private float regenRate = 15f; 
+    [SerializeField] private float recoveryThreshold = 20f;
+    [SerializeField] private Color normalColor;
+    [SerializeField] private Color exhaustedColor = Color.red;
+    private float currentStamina;
+    private bool isExhausted;
+
+    [Header("Health Settings")]
+    [SerializeField] private Image healthBarImage; //  HP im
+    [SerializeField] private float maxHealth = 100f;
+    public float currentHealth { get; private set; }
+
+    [Header("Damage Flash")]
+    [SerializeField] private Image damageVignetteImage;
+    [SerializeField] private float flashDuration = 0.5f;
+    
+    [Header("Visuals")]
+    [SerializeField] private Animator anim;
+    [SerializeField] private SpriteRenderer playerSprite;
+
+    [Header("Sound Effects")]
+    [SerializeField] private AudioClip[] damageSoundClip;
+
+
+    [Header("Stealth")]
+    public bool isHidden = false;
+    public bool isCrouching { get; private set; } 
+    public bool isAiming = false;
+    
+    
+    private PlayerControls playerControls;
+    private Rigidbody rb;
+    private Vector3 movement;
+    private float currentSpeed; 
+    
+    private const string IS_WALK_PARAM = "isWalk";
+    private const string IS_CROUCH_PARAM = "isCrouch"; 
+    private const string IS_RUN_PARAM = "isRun";
+
+    [Header("Portrait Settings")]
+    [SerializeField] private Animator portraitAnim;
+    [SerializeField] private float hurtThreshold = 40f; 
+
+    [Header("Game Over")]
+    [SerializeField] private GameObject gameOverPanel;
+
+
+
+    private void Awake()
+    {
+        playerControls = new PlayerControls();
+    }
+
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
+
+    private void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody>();
+        currentSpeed = walkSpeed;
+
+        // stamina
+        currentStamina = maxStamina;
+
+        // health
+        currentHealth = maxHealth;
+
+        if (staminaBarImage != null)
+        {
+            normalColor = staminaBarImage.color;
+        }
+    }
+
+    void Update()
+    {
+        if (DialogueManager.Instance != null && DialogueManager.Instance.PlayingDialogue)
+        {
+            anim.SetBool(IS_WALK_PARAM, false); 
+            anim.SetBool(IS_CROUCH_PARAM, false); 
+            movement = Vector3.zero; 
+            return; 
+        }
+
+        if (isAiming)
+        {
+            movement = Vector3.zero; 
+            anim.SetBool(IS_WALK_PARAM, false);
+            anim.SetBool(IS_RUN_PARAM, false);
+            return; 
+        }
+
+        float x = playerControls.Player.Move.ReadValue<Vector2>().x;
+        float z = playerControls.Player.Move.ReadValue<Vector2>().y;
+
+        // crouch
+        isCrouching = playerControls.Player.Crouch.IsPressed();
+        // run
+        bool isRunning = playerControls.Player.Run.IsPressed() && canRun;
+
+        
+        movement = new Vector3(x, 0, z).normalized;
+        bool isMoving = movement != Vector3.zero;
+
+        // Handle Exhaustion State
+        if (currentStamina <= 0) isExhausted = true;
+        if (isExhausted && currentStamina >= recoveryThreshold) isExhausted = false;
+
+        // stamina logic
+        if (isRunning && isMoving && !isCrouching && currentStamina > 0 && !isExhausted)
+        {
+            currentSpeed = runSpeed;
+            currentStamina -= drainRate * Time.deltaTime;
+        }
+        else
+        {
+            currentSpeed = isCrouching ? crouchSpeed : walkSpeed;
+            
+            // regen if not running or if standing still
+            if (currentStamina < maxStamina)
+            {
+                currentStamina += regenRate * Time.deltaTime;
+            }
+        }
+
+        // Clamp and update stamina UI
+        currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+        if (staminaBarImage != null)
+        {
+            staminaBarImage.fillAmount = currentStamina / maxStamina;
+            staminaBarImage.color = isExhausted ? exhaustedColor : normalColor;
+        }
+
+        // Update health UI
+        if (healthBarImage != null)
+        {
+            // Health ratio = current / max
+            healthBarImage.fillAmount = currentHealth / maxHealth;
+        }
+
+        if (movement != Vector3.zero) 
+        {
+            anim.SetFloat("moveX", x);
+            anim.SetFloat("moveY", z);
+        }
+        anim.SetBool(IS_WALK_PARAM, isMoving);
+        anim.SetBool(IS_CROUCH_PARAM, isCrouching); 
+        anim.SetBool(IS_RUN_PARAM, currentSpeed == runSpeed && isMoving);
+
+        // portrait logic
+        if (portraitAnim != null)
+        {
+            // 1. Check Dead
+            bool dead = currentHealth <= 0;
+            portraitAnim.SetBool("isDead", dead);
+
+            // 2. Check Hurt 
+            bool hurt = currentHealth <= hurtThreshold && !dead;
+            portraitAnim.SetBool("isHurt", hurt);
+
+            // 3. Check Tired 
+            // Only show tired if not hurt or dead
+            bool tired = isExhausted && !hurt && !dead; 
+            portraitAnim.SetBool("isTired", tired);
+        }
+    }
+
+    public void SetPanicPortrait(bool isPanicking)
+    {
+        if (portraitAnim != null)
+        {
+            portraitAnim.SetBool("isPanicking", isPanicking);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.MovePosition(transform.position + movement * currentSpeed * Time.deltaTime);
+    }
+
+    // function to handle damage
+    public void TakeDamage(float damage)
+    {
+        if (currentHealth <= 0) return; 
+
+        currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        if (healthBarImage != null)
+        {
+            healthBarImage.fillAmount = currentHealth / maxHealth;
+        }
+
+        SoundFXManager.instance.PlayRandomSoundFXClip(damageSoundClip, transform, 0.2f);
+    
+        if (damageVignetteImage != null) StartCoroutine(DamageFlash());
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log("Player has died!");
+        
+        // 1. Stop movement
+        movement = Vector3.zero;
+        rb.velocity = Vector3.zero;
+        playerControls.Disable(); // Freeze inputs
+
+        // 2. Trigger Death Animation
+        anim.SetBool("isDead", true); 
+        
+        // 3. Show UI
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(true);
+        }
+    }
+
+
+
+    private IEnumerator DamageFlash()
+    {
+        Color flashColor = damageVignetteImage.color;
+        flashColor.a = 0.5f; 
+        damageVignetteImage.color = flashColor;
+
+        float timer = 0f;
+        while (timer < flashDuration)
+        {
+            timer += Time.deltaTime;
+            
+            flashColor.a = Mathf.Lerp(0.5f, 0f, timer / flashDuration);
+            damageVignetteImage.color = flashColor;
+            
+            yield return null;
+        }
+
+        flashColor.a = 0f;
+        damageVignetteImage.color = flashColor;
+    }
+
+    public void SetOverworldVisuals(Animator animator, SpriteRenderer spriteRenderer, Vector3 scale)
+    {
+        anim = animator;
+        playerSprite = spriteRenderer;
+        transform.localScale = scale;
+    }
+
+    public void RefreshVisuals()
+    {
+        // 1. First, find the active SpriteRenderer (which correctly grabs Sampaguita_NEW)
+        playerSprite = GetComponentInChildren<SpriteRenderer>();
+
+        // 2. Tell the script: "Look at the object you just found, and grab its Animator!"
+        if (playerSprite != null)
+        {
+            anim = playerSprite.GetComponent<Animator>();
+            Debug.Log("Successfully linked new Animator: " + anim.gameObject.name);
+        }
+        else
+        {
+            Debug.LogWarning("Could not find the new SpriteRenderer!");
+        }
+    }
+}
