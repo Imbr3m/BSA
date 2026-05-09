@@ -20,6 +20,9 @@ namespace QTEPack
         [SerializeField] private float bounceHeight = 0.5f; // How high it jumps. (Use bigger numbers like 20f if it's on a Canvas)
         [SerializeField] private float bounceSpeed = 0.15f; // How fast the bounce takes to finish
 
+        [Header("Audio Settings")]
+        [SerializeField] private AudioClip smashSound; // NEW: The sound to play on every spacebar press!
+
         private bool done;
         private int clicksCount;
         private Vector3 originalFoodPos;
@@ -98,11 +101,13 @@ namespace QTEPack
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     clicksCount++;
+                    if (smashSound != null && SoundFXManager.instance != null)
+                    {
+                        SoundFXManager.instance.PlayUIBeep(smashSound, 1f);
+                    }
 
-                    // Trigger the bounce animation every time they press space!
                     if (foodSprite != null)
                     {
-                        // Stop the current bounce if they spam the button before it finishes
                         if (bounceRoutine != null) StopCoroutine(bounceRoutine);
                         bounceRoutine = StartCoroutine(FoodBounce());
                     }
@@ -117,14 +122,12 @@ namespace QTEPack
             {
                 timer += Time.deltaTime;
                 
-                // This creates a perfect, smooth arc that always returns to 0
                 float heightCurve = Mathf.Sin((timer / bounceSpeed) * Mathf.PI);
                 
                 foodSprite.localPosition = originalFoodPos + new Vector3(0, bounceHeight * heightCurve, 0);
                 yield return null;
             }
             
-            // Lock it perfectly back into place at the end
             foodSprite.localPosition = originalFoodPos;
         }
 
