@@ -122,8 +122,19 @@ public class ReversedPlayerController : MonoBehaviour
         bool isRunning = playerControls.Player.Run.IsPressed() && canRun;
 
         
-        movement = new Vector3(x, 0, z).normalized;
-        bool isMoving = movement != Vector3.zero;
+        // ==============================================
+        Vector3 camForward = Camera.main.transform.forward;
+        Vector3 camRight = Camera.main.transform.right;
+        
+        camForward.y = 0; 
+        camRight.y = 0;
+        camForward.Normalize();
+        camRight.Normalize();
+
+        movement = (camForward * z + camRight * x).normalized;
+        // ==============================================
+        // 
+        bool isMoving = movement != Vector3.zero;      
 
         // Handle Exhaustion State
         if (currentStamina <= 0) isExhausted = true;
