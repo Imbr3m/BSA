@@ -94,7 +94,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: c89b0a82178b7be49bf14cba2dce99bd,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -126,6 +127,112 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1675381611}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &66715919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 66715920}
+  - component: {fileID: 66715923}
+  - component: {fileID: 66715922}
+  - component: {fileID: 66715921}
+  m_Layer: 0
+  m_Name: Plane (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &66715920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66715919}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.42129976, z: -0.90692145, w: 0}
+  m_LocalPosition: {x: 7.9102, y: 5.943, z: -2.3318}
+  m_LocalScale: {x: 2.6225452, y: 1, z: -1.1406087}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 978709861}
+  m_LocalEulerAnglesHint: {x: 49.833, y: 360, z: 180}
+--- !u!64 &66715921
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66715919}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &66715922
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66715919}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 5328dbfa19333d3468c371e455fbd7e4, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &66715923
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66715919}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &92262783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efce1c7393451944da403a3923690ac4,
@@ -2167,6 +2274,7 @@ Transform:
   - {fileID: 1495174263}
   - {fileID: 255403675}
   - {fileID: 2022282859}
+  - {fileID: 66715920}
   - {fileID: 1156293371}
   - {fileID: 424105234}
   - {fileID: 290912283}
@@ -2652,18 +2760,18 @@ MonoBehaviour:
     OneShotSound: {fileID: 0}
     DialogueToPrint: "While SAMPAGUITA admires her new look. A wooden door opens,
       showing the arrival of SAMPAGUITA\u2019S father.\r"
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   - Name: SAMPAGUITA
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: Tatay! Look at what NANAY made for me
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   - Name: TATAY
     VoiceSound: {fileID: 8300000, guid: 163fac438ae9ef84b964faca18db44ed, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: "SAMPAGUITA! There\u2019s my little flower! \r\nCome here will
       you.\r"
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   realPlayer: {fileID: 133291674}
   reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 839015343}
@@ -3095,18 +3203,18 @@ MonoBehaviour:
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: "What\u2019s this?"
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   - Name: NANAY
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: A wreath, I need your help with making it. Could you help gather
       flowers around the house?
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   - Name: SAMPAGUITA
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: Okay!
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   realPlayer: {fileID: 133291674}
   reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 1097030384}
@@ -3291,13 +3399,13 @@ MonoBehaviour:
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: "Hehe, isn\u2019t it? Here. This is for you, our little flower.\r"
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   - Name: 
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: 'NANAY hands SAMPAGUITA the wreath of sampaguitas by crowning
       it on her head. '
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   realPlayer: {fileID: 133291674}
   reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 1097030384}
@@ -3307,6 +3415,90 @@ MonoBehaviour:
   idleY: moveY
   faceX: 1
   faceY: 0
+--- !u!1 &1268044356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1268044359}
+  - component: {fileID: 1268044358}
+  - component: {fileID: 1268044357}
+  m_Layer: 0
+  m_Name: doorway_1_half
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1268044357
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268044356}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: da297c5724ad00b49aaea7a53c00eedc, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1268044358
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268044356}
+  m_Mesh: {fileID: -5779776082804708716, guid: d613ab9d40f00aa4b8ec2a59fc8919d7, type: 3}
+--- !u!4 &1268044359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268044356}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.687, y: -0.15, z: 1.31}
+  m_LocalScale: {x: 1.2548358, y: 1.3361195, z: 1.1237}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1993904247419370542}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1299495295
 GameObject:
   m_ObjectHideFlags: 0
@@ -4683,13 +4875,13 @@ MonoBehaviour:
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: "Hehe, isn\u2019t it? Here. This is for you, our little flower.\r"
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   - Name: 
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: 'NANAY hands SAMPAGUITA the wreath of sampaguitas by crowning
       it on her head. '
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   realPlayer: {fileID: 133291674}
   reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 1097030384}
@@ -4787,23 +4979,23 @@ MonoBehaviour:
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: Here you go Nanay!
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   - Name: NANAY
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: "Thank you dear.\r"
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   - Name: 
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: "Thanks to SAMPAGUITA\u2019s help, her NANAY managed to complete
       the wreath. SAMPAGUITA was amazed by her NANAY\u2019S work.\r"
-    LettersPerSecond: 15
+    LettersPerSecond: 25
   - Name: SAMPAGUITA
     VoiceSound: {fileID: 8300000, guid: 8070087865f602e4786222f0eb995605, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: Woah! This looks so pretty!
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   realPlayer: {fileID: 133291674}
   reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 1097030384}
@@ -4966,13 +5158,13 @@ MonoBehaviour:
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: "Hehe, isn\u2019t it? Here. This is for you, our little flower.\r"
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   - Name: 
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
     OneShotSound: {fileID: 0}
     DialogueToPrint: 'NANAY hands SAMPAGUITA the wreath of sampaguitas by crowning
       it on her head. '
-    LettersPerSecond: 15
+    LettersPerSecond: 20
   realPlayer: {fileID: 133291674}
   reversedPlayer: {fileID: 0}
   playerAnimator: {fileID: 1097030384}
@@ -6279,6 +6471,24 @@ SpriteRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 1675381611}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &253527981026892049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993904247419370542}
+  - component: {fileID: 6202247702541490751}
+  - component: {fileID: 4514172499365536917}
+  m_Layer: 0
+  m_Name: door_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &280389358482560938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6415,6 +6625,64 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53b620a8811fe174fa39834fe42d7310, type: 3}
+--- !u!4 &1993904247419370542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253527981026892049}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.558, y: 0.089, z: -0.065}
+  m_LocalScale: {x: 1.1305003, y: 1.0189393, z: 1.2624296}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6323982749705809138}
+  m_Father: {fileID: 1268044359}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &2051505679307568045
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8602566957318426635}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2394862687571527208, guid: e1c331b3fad9e984198f6697adb4453e, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &2702801654459972244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6560,6 +6828,57 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 295562735}
   m_SourcePrefab: {fileID: 100100000, guid: 0134da2186c4a294386954645124ed5a, type: 3}
+--- !u!23 &4514172499365536917
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253527981026892049}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 3219422642405247141, guid: e1c331b3fad9e984198f6697adb4453e, type: 3}
+  - {fileID: 2394862687571527208, guid: e1c331b3fad9e984198f6697adb4453e, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &4795631146468617902
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8602566957318426635}
+  m_Mesh: {fileID: 2302283261861017682, guid: e1c331b3fad9e984198f6697adb4453e, type: 3}
 --- !u!1001 &5923495655826276098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6696,6 +7015,47 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa886f72b0a6c4f4d86a33f194727001, type: 3}
+--- !u!33 &6202247702541490751
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253527981026892049}
+  m_Mesh: {fileID: -173581546909613224, guid: e1c331b3fad9e984198f6697adb4453e, type: 3}
+--- !u!4 &6323982749705809138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8602566957318426635}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0.9500027, y: -0.04699999, z: 1.0769999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1993904247419370542}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8602566957318426635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6323982749705809138}
+  - component: {fileID: 4795631146468617902}
+  - component: {fileID: 2051505679307568045}
+  m_Layer: 0
+  m_Name: door_handle_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &8918350761753341405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6780,3 +7140,4 @@ SceneRoots:
   - {fileID: 2013521106}
   - {fileID: 1482030603}
   - {fileID: 679646069}
+  - {fileID: 1268044359}
