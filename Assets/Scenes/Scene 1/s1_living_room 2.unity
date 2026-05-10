@@ -418,6 +418,8 @@ GameObject:
   m_Component:
   - component: {fileID: 156643268}
   - component: {fileID: 156643269}
+  - component: {fileID: 156643270}
+  - component: {fileID: 156643271}
   m_Layer: 0
   m_Name: First Timeline
   m_TagString: Untagged
@@ -496,8 +498,59 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -7680303586211899307, guid: b1d1c833c26b6564f9a169eb3334b336, type: 2}
     value: {fileID: 2114810063}
+  - key: {fileID: -3302854758878522943, guid: b1d1c833c26b6564f9a169eb3334b336, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5217196205426521959, guid: b1d1c833c26b6564f9a169eb3334b336, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -8216817938906280716, guid: b1d1c833c26b6564f9a169eb3334b336, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3263354801471209509, guid: b1d1c833c26b6564f9a169eb3334b336, type: 2}
+    value: {fileID: 156643271}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &156643270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156643267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b480352dd54b69d43bee7b736d09555f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: ChaseScene
+--- !u!114 &156643271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156643267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 9d406b941dc97364688c3056a41fa372, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 156643270}
+          m_TargetAssemblyTypeName: TimelineSceneLoader, Assembly-CSharp
+          m_MethodName: LoadNextScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &159886283
 GameObject:
   m_ObjectHideFlags: 0
@@ -3418,6 +3471,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: 1e7c2863734b83d43bc82757f4b5ebaa, type: 2}
     - {fileID: 11400000, guid: b70b0134a848f6948ae6fe6f57197c02, type: 2}
+    - {fileID: 11400000, guid: 9d406b941dc97364688c3056a41fa372, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -3438,6 +3492,20 @@ MonoBehaviour:
         - m_Target: {fileID: 1410728835}
           m_TargetAssemblyTypeName: TimelineDialogueBridge, Assembly-CSharp
           m_MethodName: StartCutsceneDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 156643270}
+          m_TargetAssemblyTypeName: TimelineSceneLoader, Assembly-CSharp
+          m_MethodName: LoadNextScene
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5229,12 +5297,12 @@ MonoBehaviour:
   - Name: Japanese Soldier
     VoiceSound: {fileID: 8300000, guid: 163fac438ae9ef84b964faca18db44ed, type: 3}
     OneShotSound: {fileID: 0}
-    DialogueToPrint: "\u3053\u3093\u306B\u3061\u306F\u3001\u79C1\u306F\u304A\u8179\u304C\u7A7A\u3044\u305F\u30CA\u30AC\u30EB\u306E\u30D5\u30A7\u30E0\u30DC\u30FC\u30A4\u3067\u3059!!!!"
+    DialogueToPrint: '*Speaking Japanese*'
     LettersPerSecond: 40
   - Name: Japanese Soldier
     VoiceSound: {fileID: 8300000, guid: 163fac438ae9ef84b964faca18db44ed, type: 3}
     OneShotSound: {fileID: 0}
-    DialogueToPrint: "\u79C1\u306F\u30B1\u30F3\u30BF\u30C3\u30AD\u30FC\u30D5\u30E9\u30A4\u30C9\u30C1\u30AD\u30F3\u304C\u597D\u304D\u3067\u3059!!!"
+    DialogueToPrint: '*Speaks more Japanese*'
     LettersPerSecond: 40
   - Name: NANAY
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
@@ -5795,17 +5863,17 @@ MonoBehaviour:
   introLines:
   - Name: 
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
-    OneShotSound: {fileID: 0}
+    OneShotSound: {fileID: 8300000, guid: 20592b4aabff1284daccb8f6c87938c9, type: 3}
     DialogueToPrint: BOOM! BANG! AAAHHHHH!!! BANG!!
     LettersPerSecond: 20
   - Name: NANAY
     VoiceSound: {fileID: 8300000, guid: a62f837488a46bf4391e0821a77ababd, type: 3}
-    OneShotSound: {fileID: 0}
+    OneShotSound: {fileID: 8300000, guid: e377e7b304ab33346a0b9355ef1b6fd2, type: 3}
     DialogueToPrint: Honey... What's happenning???
     LettersPerSecond: 20
   - Name: 
     VoiceSound: {fileID: 8300000, guid: 54cb851ce76ac6b4b9637e09b6a65234, type: 3}
-    OneShotSound: {fileID: 0}
+    OneShotSound: {fileID: 8300000, guid: e1bc172a7a0044a489a1d7a321db81fa, type: 3}
     DialogueToPrint: 'The sounds of shootings and explosions can be heard outside
       suddenly...
 
@@ -5813,7 +5881,7 @@ MonoBehaviour:
     LettersPerSecond: 20
   - Name: TATAY
     VoiceSound: {fileID: 8300000, guid: 163fac438ae9ef84b964faca18db44ed, type: 3}
-    OneShotSound: {fileID: 0}
+    OneShotSound: {fileID: 8300000, guid: 0e864e953f9b7d84392a0f484ed5c41b, type: 3}
     DialogueToPrint: SOMEONE'S COMING!!
     LettersPerSecond: 20
   realPlayer: {fileID: 133291674}
