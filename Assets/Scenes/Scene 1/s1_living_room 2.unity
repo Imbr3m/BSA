@@ -5454,6 +5454,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2882424827723171325, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      propertyPath: m_IsGlobal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882424827723171325, guid: 374ac57dacb321445a59186f1d8006f2,
+        type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: d18e2380c9776044a8fc9f10eb29c779,
+        type: 2}
     - target: {fileID: 3335837779258864906, guid: 374ac57dacb321445a59186f1d8006f2,
         type: 3}
       propertyPath: m_IsActive
